@@ -1,0 +1,20 @@
+img {
+    border: 0;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+figure {
+    margin: 0 0 var(--wp--custom--gap--vertical) 0;
+}
+
+figcaption {
+    display: block !important; // overrides gutenberg issue
+    font-size: var(--wp--custom--figcaption--font-size);
+    font-style: var(--wp--custom--figcaption--font-style);
+    font-weight: var(--wp--custom--figcaption--font-weight);
+    margin: var(--wp--custom--figcaption--margin);
+    padding: 0;
+}

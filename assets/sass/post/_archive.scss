@@ -1,0 +1,11 @@
+.wp-block-post-template, .wp-block-query-loop {
+
+	.post-meta {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.wp-block-post-title {
+	font-size: var(--wp--preset--font-size--x-large);
+}

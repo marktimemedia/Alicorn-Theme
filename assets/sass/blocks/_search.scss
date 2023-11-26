@@ -1,0 +1,96 @@
+@import '../base/mixins';
+
+.wp-block-search {
+
+	&.wp-block-search__button-inside {
+		.wp-block-search__inside-wrapper{
+			padding: var(--wp--custom--form--border--width);
+			border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+			border-radius: var(--wp--custom--form--border--radius);
+			.wp-block-search__input {
+				padding: 0 var(--wp--custom--form--padding);
+			}
+		}
+	}
+
+	.wp-block-search__input {
+		padding: var(--wp--custom--form--padding);
+		border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+	}
+
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button,
+	.wp-block-search__button {
+		@include button-main-styles;
+		@include button-hover-styles;
+		&.has-icon {
+			line-height: 0;
+		}
+	}
+
+	.wp-block-search__input {
+		&::placeholder {
+			color: var(--wp--custom--form--color--text);
+			opacity: 0.66;
+		}
+	}
+
+	/* Block Styles */
+	&.is-style-small-search{
+		--wp--custom--button--typography--font-size: calc( 0.8 * var(--wp--preset--font-size--small));
+		.wp-block-search__input {
+			padding: calc( 0.5 * var(--wp--custom--form--padding) );
+		}
+	}
+}
+
+/* Toggle Search Styles */
+.search-toggle-form {
+	max-width: 0;
+  overflow: hidden; // to account for the toggle
+	transition: all .8s;
+
+	&.search-expanded, &.block-editor-block-list__block {
+		max-width: 400px;
+	}
+
+}
+.search-toggle-container.is-layout-flex {
+	gap: 1rem;
+}
+.search-toggle-trigger {
+	--wp--custom--button--typography--font-size: calc( 0.8 * var(--wp--preset--font-size--small));
+	align-self: center;
+	display: inherit !important;
+	.wp-block-button__link {
+		width: 32px;
+		height: 32px;
+		overflow: hidden;
+		padding: 6px !important;
+		line-height: 2em !important;
+	}
+	&.is-style-outline {
+		.wp-block-button__link {
+			padding: 3px !important;
+		}
+	}
+	.wp-block-button__link:before {
+		align-self: center;
+		content: "";
+		display: block;
+		height: 22px;
+		width: 22px;
+		mask-size: contain;
+		-webkit-mask-size: contain;
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		background-color: currentColor;
+		-webkit-mask-image: url('assets/svg/search.svg');
+   		mask-image: url('assets/svg/search.svg');
+	}
+	&.search-open {
+		.wp-block-button__link:before {
+			-webkit-mask-image: url('assets/svg/close.svg');
+   			mask-image: url('assets/svg/close.svg');
+		}
+	}
+}

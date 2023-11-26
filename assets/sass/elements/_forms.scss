@@ -1,0 +1,94 @@
+input.wp-block-search__input,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	background: var(--wp--custom--form--color--background);
+	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+	border-radius: var(--wp--custom--form--border--radius);
+	box-shadow: var(--wp--custom--form--color--box-shadow);
+	color: var(--wp--custom--form--color--text);
+	font-family: inherit;
+	padding: var(--wp--custom--form--padding);
+
+	&:focus {
+		border-color: var(--wp--custom--form--color--border);
+		color: var(--wp--custom--form--color--text);
+		outline: 1px dotted currentColor;
+		outline-offset: 2px;
+	}
+}
+
+input[type="checkbox"] {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+	border-radius: var(--wp--custom--form--border--radius);
+	content: var(--wp--custom--form--checkbox--unchecked--content);
+	height: var(--wp--custom--form--checkbox--sizing--height);
+	width: var(--wp--custom--form--checkbox--sizing--width);
+	background: var(--wp--custom--form--color--background);
+	&:checked {
+		content: var(--wp--custom--form--checkbox--checked--content);
+		background-color: var(--wp--custom--color--interactive);
+		color: var(--wp--custom--color--foreground);
+		font-size: var(--wp--custom--form--checkbox--checked--font-size);
+		left: var(--wp--custom--form--checkbox--checked--position--left);
+		top: var(--wp--custom--form--checkbox--checked--position--top);
+	}
+}
+
+
+input[type="checkbox"],
+input[type="submit"],
+button {
+	transition: all 0.3s;
+	&:focus {
+		outline: 1px dotted currentColor;
+		outline-offset: 2px;
+	}
+
+	&::placeholder {
+		color: var(--wp--custom--form--color--text);
+		opacity: 0.66;
+	}
+}
+
+select {
+	font-family: inherit;
+	font-size: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+label {
+	font-size: var(--wp--custom--form--label--typography--font-size);
+	font-weight: var(--wp--custom--form--label--typography--font-weight);
+	letter-spacing: var(--wp--custom--form--label--typography--letter-spacing);
+	text-transform: var(--wp--custom--form--label--typography--text-transform);
+	margin-top:  var(--wp--custom--form--label--spacing--margin--top);
+	margin-bottom:  var(--wp--custom--form--label--spacing--margin--bottom);
+}
+
+// Vertically align checkbox + label relationship
+input[type=checkbox] + label {
+	display: inline;
+	margin-left: 0.5em;
+	line-height: 1em;
+}

@@ -1,0 +1,104 @@
+// Hide an element accesibly instead of using display: none;
+// Source: https://github.com/WordPress/gutenberg/blob/3da717b8d0ac7d7821fc6d0475695ccf3ae2829f/packages/block-editor/src/components/responsive-block-control/style.scss#L1
+@mixin hide-accesibly {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+@mixin post-meta-icon {
+	display: flex;
+	flex-wrap: wrap;
+	&:before {
+		align-self: center;
+		content: '';
+		display: inline-block;
+		margin-right: var(--wp--preset--spacing--10);
+		height: 1em;
+		width: 1em;
+		mask-size: contain;
+		-webkit-mask-size: contain;
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		background-color: currentColor;
+	}
+}
+
+@mixin post-meta-with-separator( $content ) {
+	&.wp-block-group {
+		gap: 0;
+	}
+
+	> * {
+		&:not(:first-child):before {
+			color: var(--wp--custom--color--background);
+			content: $content;
+			margin-left: var(--wp--custom--gap--baseline);
+			margin-right: var(--wp--custom--gap--baseline);
+		}
+	}
+}
+
+// NOTE: These remain for the styling of buttons that are NOT blocks and is used elsewhere.  This can be removed when those no longer exist.
+// See https://github.com/WordPress/gutenberg/issues/29167
+@mixin button-main-styles {
+	@include button-padding-border-styles;
+	@include button-typography-styles;
+	@include button-color-styles;
+}
+
+@mixin button-color-styles {
+	opacity: 1;
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	svg {
+		fill: var(--wp--custom--button--color--text);
+	}
+}
+
+//standard Button padding.  Account for desired padding size and the size of the border width (so that the total height of
+//standard and outline buttons are equal.
+@mixin button-padding-border-styles {
+	border-radius: var(--wp--custom--button--border--radius);
+	border-style: var(--wp--custom--button--border--style);
+	border-width: var(--wp--custom--button--border--width);
+	padding-top: var(--wp--custom--button--spacing--border-padding--top);
+	padding-bottom: var(--wp--custom--button--spacing--border-padding--bottom);
+	padding-left: var(--wp--custom--button--spacing--border-padding--left);
+	padding-right: var(--wp--custom--button--spacing--border-padding--right);
+}
+
+@mixin button-typography-styles {
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: inherit;
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
+}
+
+
+// NOTE: These remain for the hover styling of blocks.  This can be removed when the button block has configurable hover states.
+// The mechanism below ONLY CHANGES CSS VARIABLES that are already applied to properties (above)
+// See https://github.com/WordPress/gutenberg/issues/4543
+@mixin button-hover-styles {
+	//The following changes should ONLY be changed if the user has NOT set a custom color
+	&:not(.has-background):not(.has-text-color) {
+		&:hover,
+		&:focus,
+		&.has-focus {
+			//change the color variables to the hover equivalent
+			--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+			--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+			--wp--custom--button--border--color: var(--wp--custom--button--hover--border--color);
+			@include button-color-styles;
+		}
+	}
+}

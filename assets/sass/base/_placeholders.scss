@@ -1,0 +1,110 @@
+// var(--wp--custom--gap--horizontal-sm)
+// var(--wp--custom--gap--horizontal-md)
+// var(--wp--custom--gap--horizontal-lg)
+// var(--wp--custom--layout--content-size)
+
+%nofloats {
+  float: none !important;
+  max-width: none;
+  width: 100%;
+}
+
+%uppercase {
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+%iconlight {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+
+  &:before {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300;
+  }
+}
+
+%iconbrand {
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+
+  &:before {
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+}
+
+%icon {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+
+  &:before {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+  }
+}
+
+%reverse {
+  color: var(--wp--custom--color--background) !important;
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: var(--wp--custom--color--background) !important;
+  }
+  a {
+    color: var(--wp--custom--color--background) !important;
+    &:hover, &:focus {
+      opacity: 0.9;
+    }
+  }
+  label {
+    color: var(--wp--custom--color--background) !important;
+  }
+  input.wp-block-search__input,
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="range"],
+  input[type="date"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="color"],
+  textarea {
+  	background-color: transparent !important;
+  	border-color: var(--wp--custom--color--background) !important;
+  	color: var(--wp--custom--color--background) !important;
+
+  	&:focus {
+      border-color: var(--wp--custom--color--background) !important;
+    	color: var(--wp--custom--color--background) !important;
+  		outline: 1px dotted currentColor;
+  	}
+  }
+}

@@ -1,0 +1,14 @@
+# Local files
+.DS_Store
+.thumbsdb
+.svn
+init.sh
+templates/*
+debug.log
+
+**/node_modules/
+vendor/
+.editorconfig
+.eslintignore
+.eslintrc.js
+.phpcs.xml.dist

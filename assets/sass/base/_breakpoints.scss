@@ -1,0 +1,35 @@
+@import '../../../node_modules/@wordpress/base-styles/breakpoints';
+@import '../../../node_modules/@wordpress/base-styles/mixins';
+
+// Included Breakpoints For Reference
+// -----
+// $break-huge: 1440px;
+// $break-wide: 1280px;
+// $break-xlarge: 1080px;
+// $break-large: 960px;	// admin sidebar auto folds
+// $break-medium: 782px;	// adminbar goes big
+// $break-small: 600px; // navigation collapses
+// $break-mobile: 480px;
+// $break-zoomed-in: 280px;
+
+// To add min-width breakpoints
+// -----
+// @include break-X() {
+// 	@media (min-width: #{($break-X)}) {
+// 		@content;
+// 	}
+// }
+
+$break-content: var(--wp--custom--layout--content-size);
+
+@mixin break-small-only() {
+	@media (max-width: #{ ($break-small - 1) }) {
+		@content;
+	}
+}
+
+@mixin break-medium-only() {
+	@media (max-width: #{ ($break-medium - 1) }) {
+		@content;
+	}
+}

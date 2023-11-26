@@ -1,0 +1,51 @@
+// Default link styles
+a:not(.wp-block-button__link, .button) {
+
+	&:hover,
+	&:focus {
+		color: var(--wp--custom--color--interactive-hover)
+	}
+}
+
+a {
+	cursor: pointer;
+	transition: var(--wp--custom--animation--transition-type) var(--wp--custom--animation--transition-duration);
+	
+	&:hover,
+	&:focus {
+		transition: var(--wp--custom--animation--transition-type) var(--wp--custom--animation--transition-duration);
+	}
+}
+
+// Select the focus states of all non-wpadmin and screen reader links
+a:not(.ab-item):not(.screen-reader-shortcut) {
+
+	&:active,
+	&:focus {
+		outline: 1px dotted currentcolor;
+	}
+}
+
+//Links that appear in the main content area
+.block-editor-block-list__layout a, // Needed for the post area
+.wp-block-post-content a {
+	text-decoration-line: var(--wp--custom--paragraph--link--typography--text-decoration);
+
+	&:hover,
+	&:focus {
+		text-decoration: var(--wp--custom--paragraph--link--hover--typography--text-decoration);
+	}
+}
+
+// Select the focus states of all non-wpadmin and screen reader links
+a:not(.ab-item):not(.screen-reader-shortcut) {
+	&:active,
+	&:focus {
+		outline: 1px dotted currentColor;
+		text-decoration: none;
+	}
+}
+
+.has-medium-font-size, .has-small-font-size, .has-x-small-font-size {
+	font-weight: var(--wp--custom--body--typography--font-weight);
+}

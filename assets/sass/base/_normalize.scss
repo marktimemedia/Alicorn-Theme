@@ -1,0 +1,92 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+	background: var(--wp--custom--color--background);
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: var(--wp--custom--body--typography--line-height);
+    font-weight: var(--wp--custom--body--typography--font-weight);
+	height: 100%;
+	text-rendering: optimizeLegibility;
+	width: 100%;
+}
+
+pre, abbr, acronym, address, cite, code, del, dfn, img, q, s, samp, small, strike, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-style: normal;
+    font-size: 100%;
+    font-weight: normal;
+    padding: 0;
+}
+
+em, strong {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+}
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+    margin: 0;
+}
+
+audio[controls], canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+pre {
+	overflow: scroll;
+}
+
+code, pre {
+    font-family: var(--wp--custom--code--typography--font-family);
+    font-weight: var(--wp--custom--code--typography--font-weight);
+    line-height: var(--wp--custom--code--typography--line-height);
+}
+
+@-webkit-viewport {
+    width: device-width;
+}
+
+@-moz-viewport {
+    width: device-width;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
