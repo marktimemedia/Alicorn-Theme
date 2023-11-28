@@ -44,8 +44,6 @@ input[type="checkbox"] {
 	background: var(--wp--custom--form--color--background);
 	&:checked {
 		content: var(--wp--custom--form--checkbox--checked--content);
-		background-color: var(--wp--custom--color--interactive);
-		color: var(--wp--custom--color--foreground);
 		font-size: var(--wp--custom--form--checkbox--checked--font-size);
 		left: var(--wp--custom--form--checkbox--checked--position--left);
 		top: var(--wp--custom--form--checkbox--checked--position--top);

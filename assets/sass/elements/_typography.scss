@@ -1,5 +1,5 @@
 // Default link styles
-a:not(.wp-block-button__link, .button) {
+a:where(:not(.wp-block-button__link, .button)) {}
 
 	&:hover,
 	&:focus {

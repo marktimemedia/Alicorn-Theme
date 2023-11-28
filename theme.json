@@ -526,8 +526,8 @@
 				"interactive": "var(--wp--preset--color--primary)",
 				"interactiveHover": "var(--wp--preset--color--primary-dark)",
 				"uiBorder": "var(--wp--preset--color--gray-500)",
-				"warn": "var(--wp--preset--color--secondary)",
-				"error": "var(--wp--preset--color--tertiary)",
+				"warn": "#EB7100",
+				"error": "#D70404",
 				"focus": "var(--wp--preset--color--primary-light)"
 			},
 			"alignment": {
@@ -629,7 +629,7 @@
 						"width": "16px"
 					},
 					"checked": {
-						"content": "\"\\2715\"",
+						"content": "url(assets/svg/check.svg)",
 						"fontSize": "var(--wp--preset--font-size--x-small)",
 						"position": {
 							"left": "3px",
@@ -1019,8 +1019,8 @@
 					"width": "var(--wp--custom--button--border--width)"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--primary)",
-					"text": "var(--wp--custom--color--background)"
+					"background": "var(--wp--custom--button--color--background)",
+					"text": "var(--wp--custom--button--color--text)"
 				},
 				"spacing": {
 					"padding": {
