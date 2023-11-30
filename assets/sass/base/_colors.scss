@@ -5,13 +5,11 @@
 // The difference between this and the Global Styles CSS is that we reference the custom variables not the preset ones.
 // This means that undefined colors are mapped to defined ones.
 
-
-
 .has-foreground-background-color {
-	background-color: var(--wp--custom--color--foreground) !important
+	background-color: var(--wp--custom--color--foreground) !important;
 }
 .has-background-background-color {
-	background-color: var(--wp--custom--color--background) !important
+	background-color: var(--wp--custom--color--background) !important;
 }
 .has-foreground-color {
 	color: var(--wp--custom--color--foreground) !important;

@@ -1058,7 +1058,7 @@
 			},
 			"core/buttons": {
 				"spacing": {
-					"blockGap": "0.7rem"
+					"blockGap": "var(--wp--custom--gap--horizontal)"
 				}
 			},
 			"core/code": {
@@ -1092,7 +1092,7 @@
 			"core/list": {
 				"spacing": {
 					"padding": {
-						"left": "calc( 2 * var(--wp--custom--gap--horizontal) )"
+						"left": "var(--wp--custom--gap--horizontal)"
 					}
 				}
 			},
