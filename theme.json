@@ -824,25 +824,37 @@
 			},
 			"table": {
 				"border": {
-					"color": "",
+					"color": "var(--wp--custom--color--ui-border)",
 					"width": "1px",
 					"style": "solid"
 				},
 				"color": {
 					"background": "transparent"
 				},
+				"striped": {
+					"color": {
+						"background": "var(--wp--preset--color--gray-100)"
+					}
+				},
 				"header": {
 					"border": {
-						"color": "",
-						"width": "2px"
+						"color": "var(--wp--custom--color--ui-border)",
+						"width": "2px",
+						"style": "solid"
 					},
 					"color": {
-						"background": "red"
+						"background": "var(--wp--preset--color--gray-200)"
+					},
+					"typography": {
+						"fontWeight": 700,
+						"verticalAlign": "bottom"
 					}
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)",
-					"lineHeight": 1.4
+					"lineHeight": 1.4,
+					"textAlign": "left",
+					"vertialAlign": "middle"
 				},
 				"figcaption": {
 					"typography": {
@@ -850,7 +862,7 @@
 					}
 				},
 				"spacing": {
-					"cellPadding": ".25em"
+					"cellPadding": "var(--wp--preset--spacing--05)"
 				}
 			},
 			"video": {
