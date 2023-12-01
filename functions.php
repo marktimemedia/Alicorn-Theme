@@ -9,9 +9,6 @@ if ( ! function_exists( 'alicorn_support' ) ) :
 		// Alignwide and alignfull classes in the block editor.
 		add_theme_support( 'align-wide' );
 
-		// Add support for experimental link color control.
-		add_theme_support( 'experimental-link-color' );
-
 		// Add support for responsive embedded content.
 		// https://github.com/WordPress/gutenberg/issues/26901
 		add_theme_support( 'responsive-embeds' );
@@ -28,31 +25,6 @@ if ( ! function_exists( 'alicorn_support' ) ) :
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
-		// Enqueue theme css in editor styles
-		add_editor_style( array( '/style-editor.css', ) );
-
-		// Don't use core WordPress patterns, only ours
-		remove_theme_support('core-block-patterns');
-
-		// Register nav menus
-		// if Gutenberg is activated the __experimentalMenuLocation attribute is available
-		register_nav_menus(
-			array(
-				'primary' => __( 'Primary Navigation', 'alicorn' ),
-				'secondary' => __( 'Secondary Navigation', 'alicorn' ),
-				'footer' => __( 'Footer Navigation', 'alicorn' ),
-				'social' => __( 'Social Navigation', 'alicorn' )
-			)
-		);
-
-		add_filter(
-			'block_editor_settings_all',
-			function( $settings ) {
-				$settings['defaultBlockTemplate'] = '<!-- wp:group {"layout":{"inherit":true}} --><div class="wp-block-group"><!-- wp:post-content /--></div><!-- /wp:group -->';
-				return $settings;
-			}
-		);
-
 		// Add support for core custom logo.
 		add_theme_support(
 			'custom-logo',
@@ -62,6 +34,20 @@ if ( ! function_exists( 'alicorn_support' ) ) :
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
+		);
+
+		// Don't use core WordPress patterns, only ours
+		remove_theme_support('core-block-patterns');
+
+		// Enqueue theme css in editor styles
+		add_editor_style( array( '/style-editor.css', ) );
+
+		add_filter(
+			'block_editor_settings_all',
+			function( $settings ) {
+				$settings['defaultBlockTemplate'] = '<!-- wp:group {"layout":{"inherit":true}} --><div class="wp-block-group"><!-- wp:post-content /--></div><!-- /wp:group -->';
+				return $settings;
+			}
 		);
 
 	}
