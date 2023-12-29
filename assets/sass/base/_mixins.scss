@@ -101,4 +101,12 @@
 			@include button-color-styles;
 		}
 	}
+	// there are no hover states for custom color buttons right now, let's give it a filter to indicate change
+	&.has-background, &.has-text-color {
+		&:hover,
+		&:focus,
+		&.has-focus {
+			filter: brightness(0.8);
+		}
+	}
 }
