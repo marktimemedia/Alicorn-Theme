@@ -1,16 +1,10 @@
 .wp-site-blocks .site-header {
 
 	// Needed until Gutenberg offers responsive design options
-	// TODO: Ref to responsive design options issue
+	// Put all mobile-only header options here
 	@include break-small-only(){
 		.site-brand {
 			display: contents;
-		}
-		.wp-block-site-logo {
-			flex-basis: 100%;
-			margin-bottom: var(--wp--custom--gap--vertical);
-			margin-top: var(--wp--custom--gap--vertical);
-			text-align: center;
 		}
 	}
 

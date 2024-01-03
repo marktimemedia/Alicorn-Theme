@@ -5,6 +5,11 @@ a:where(:not(.wp-block-button__link, .button)) {
 	&:focus {
 		color: var(--wp--custom--color--interactive-hover)
 	}
+
+	&:active,
+	&:focus {
+		outline: 1px dotted currentcolor;
+	}
 }
 
 a {
@@ -14,15 +19,6 @@ a {
 	&:hover,
 	&:focus {
 		transition: var(--wp--custom--animation--transition-type) var(--wp--custom--animation--transition-duration);
-	}
-}
-
-// Select the focus states of all non-wpadmin and screen reader links
-a:not(.ab-item):not(.screen-reader-shortcut) {
-
-	&:active,
-	&:focus {
-		outline: 1px dotted currentcolor;
 	}
 }
 
@@ -48,4 +44,27 @@ a:not(.ab-item):not(.screen-reader-shortcut) {
 
 .has-medium-font-size, .has-small-font-size, .has-x-small-font-size {
 	font-weight: var(--wp--custom--body--typography--font-weight);
+}
+
+
+// default margins and paddings for typographic elements
+ul, ol {
+	padding-left: 2em;
+}
+
+dl {
+	margin-top: var(--wp--custom--gap--vertical);
+	margin-bottom: var(--wp--custom--gap--vertical);
+	dt {
+		font-weight: bold;
+	}
+	dd {
+		margin-left: 0;
+		margin-bottom: var(--wp--custom--gap--vertical);
+	}
+}
+
+code {
+	display: inline-block;
+	line-height: inherit;
 }

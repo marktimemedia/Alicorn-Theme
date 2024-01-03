@@ -187,37 +187,37 @@
 			"spacingSizes": [
 				{
 					"name": ".5",
-					"size": ".25rem",
+					"size": ".3rem",
 					"slug": "05"
 				},
 				{
 					"name": "1",
-					"size": ".5rem",
+					"size": "min(.75rem, 2.5vw)",
 					"slug": "10"
 				},
 				{
 					"name": "2",
-					"size": "1rem",
+					"size": "min(1.1rem, 3vw)",
 					"slug": "20"
 				},
 				{
 					"name": "3",
-					"size": "min(1.5rem, 2vw)",
+					"size": "min(1.75rem, 4vw)",
 					"slug": "30"
 				},
 				{
 					"name": "4",
-					"size": "min(2.5rem, 3vw)",
+					"size": "min(2.5rem, 5vw)",
 					"slug": "40"
 				},
 				{
 					"name": "5",
-					"size": "min(4rem, 5vw)",
+					"size": "min(4rem, 7vw)",
 					"slug": "50"
 				},
 				{
 					"name": "6",
-					"size": "min(6.5rem, 8vw)",
+					"size": "min(6.5rem, 9vw)",
 					"slug": "60"
 				},
 				{

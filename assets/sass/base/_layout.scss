@@ -10,9 +10,18 @@
 	position: relative;
 }
 
-// Override code block settings
-:where(body .is-layout-flow) > * {
-	margin-block-start: var(--wp--preset--spacing--20);
+// Override core block settings
+:where(body .is-layout-flow) > *, :where(body .is-layout-constrained) > * {
+	margin-block-start: var(--wp--custom--gap--vertical);
+	margin-block-end: var(--wp--custom--gap--vertical);
+
+	& > :first-child:first-child {
+		margin-block-start: 0;
+	}
+
+	& > :last-child:last-child {
+		margin-block-end: 0;
+	}
 }
 
 .wrapper {

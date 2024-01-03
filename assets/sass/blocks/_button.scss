@@ -3,7 +3,7 @@
  * Button
  * Needs to account for editor style and not overreach
  */
- button:where(:not([role='presentation']):not(.components-button):not([class*="navigation"])) {
+ button:where(:not([role='presentation']):not(.components-button):not([class*="navigation"])), input[type="submit"] {
  	@include button-main-styles;
  	@include button-hover-styles;
  }
