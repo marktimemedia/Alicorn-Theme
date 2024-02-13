@@ -1257,10 +1257,6 @@
 			"area": "header"
 		},
 		{
-			"name": "header",
-			"area": "header"
-		},
-		{
 			"name": "footer-utility",
 			"area": "footer"
 		},
@@ -1270,10 +1266,6 @@
 		},
 		{
 			"name": "footer-columns",
-			"area": "footer"
-		},
-		{
-			"name": "footer",
 			"area": "footer"
 		}
 	],

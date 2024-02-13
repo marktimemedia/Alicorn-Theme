@@ -1,5 +1,11 @@
 <?php
+/**
+ * Theme Setup
+ */
 if ( ! function_exists( 'alicorn_support' ) ) :
+	/**
+	 * Add Theme Support
+	 */
 	function alicorn_support() {
 		// Make theme available for translation.
 		load_theme_textdomain( 'alicorn' );
@@ -10,16 +16,16 @@ if ( ! function_exists( 'alicorn_support' ) ) :
 		add_theme_support( 'align-wide' );
 
 		// Add support for responsive embedded content.
-		// https://github.com/WordPress/gutenberg/issues/26901
+		// See https://github.com/WordPress/gutenberg/issues/26901.
 		add_theme_support( 'responsive-embeds' );
 
 		// Add support for post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 
-		// Declare that there are no <title> tags and allow WordPress to provide them
+		// Declare that there are no <title> tags and allow WordPress to provide them.
 		add_theme_support( 'title-tag' );
 
-		// Experimental support for adding blocks inside nav menus
+		// Experimental support for adding blocks inside nav menus.
 		add_theme_support( 'block-nav-menus' );
 
 		// Add support for editor styles.
@@ -36,11 +42,11 @@ if ( ! function_exists( 'alicorn_support' ) ) :
 			)
 		);
 
-		// Don't use core WordPress patterns, only ours
-		remove_theme_support('core-block-patterns');
+		// Don't use core WordPress patterns, only ours.
+		remove_theme_support( 'core-block-patterns' );
 
-		// Enqueue theme css in editor styles
-		add_editor_style( array( '/style-editor.css', ) );
+		// Enqueue theme css in editor styles.
+		add_editor_style( array( '/style-editor.css' ) );
 
 		add_filter(
 			'block_editor_settings_all',
@@ -75,7 +81,7 @@ add_action( 'admin_init', 'alicorn_editor_styles' );
 function alicorn_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_style( 'alicorn-styles', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
-	// custom theme scripts
+	// Custom theme scripts.
 	wp_enqueue_script( 'header-resize', get_template_directory_uri() . '/assets/js/build/index.js', '', 1, true );
 
 	// Add the child theme CSS if it exists.
@@ -93,7 +99,7 @@ require get_template_directory() . '/includes/fonts/custom-fonts.php';
 
 
 /**
- * Block Patterns.
+ * Block Patterns
  */
 require get_template_directory() . '/includes/block-patterns.php';
 
@@ -103,7 +109,7 @@ if ( file_exists( get_stylesheet_directory() . '/includes/block-patterns.php' ) 
 }
 
 /**
- * Block Styles.
+ * Block Styles
  */
 require get_template_directory() . '/includes/block-styles.php';
 

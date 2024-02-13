@@ -1,0 +1,27 @@
+.alicorn-query {
+    .wp-block-post-template:where(:not(.is-layout-grid)) {
+       
+       .wp-block-post-featured-image {
+          margin: 0;
+       }
+       .alicorn-query__group {
+          display: flex;
+          flex-direction: column;
+          gap: var(--wp--preset--spacing--20);       
+       }
+ 
+       .alicorn-query__body {
+          margin-block-start: 0;
+       }
+       // $break-small
+       @media only screen and (min-width: 600px ) {
+          .wp-block-post-featured-image {
+             max-width: 50%;
+          }
+          .alicorn-query__group {
+             flex-direction: row;
+          }
+       }
+       
+    }
+ }

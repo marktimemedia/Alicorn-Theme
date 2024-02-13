@@ -20,16 +20,13 @@
 		padding: var(--wp--custom--navigation--item--padding);
 		
 		.wp-block-navigation-item__content {
-			border-bottom: var(--wp--custom--navigation--hover--border--width) var(--wp--custom--navigation--hover--border--style) transparent;	
-			text-decoration: var(--wp--custom--navigation--item--text-decoration);
-			padding: var(--wp--custom--navigation--link--padding);
+			text-decoration: underline;
 		}
 
 		&:hover, &:focus {
 			
 			& > .wp-block-navigation-item__content {
-				border-color: var(--wp--custom--navigation--hover--border--color);
-				text-decoration: var(--wp--custom--navigation--hover--text-decoration);
+				text-decoration: none;
 			}
 		}
 		
@@ -37,9 +34,7 @@
 		// placement of ancestor class is inconsistent based on type of menu
 		&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor) {
 			& > .wp-block-navigation-item__content {
-				background-color: var(--wp--custom--navigation--current--color--background);
-				border-color: var(--wp--custom--navigation--current--border--color);
-				font-weight: bold;
+				font-weight: var(--theme--type--weight--bold);
 				text-decoration: var(--wp--custom--navigation--current--text-decoration);
 			}
 		}
@@ -52,6 +47,34 @@
 			}
 		}
 
+	}
+
+	// Primary Menu Area In Header
+	.site-header & {
+		.wp-block-navigation-item {
+			.wp-block-navigation-item__content {
+				border-bottom: var(--wp--custom--navigation--hover--border--width) var(--wp--custom--navigation--hover--border--style) transparent;	
+				text-decoration: var(--wp--custom--navigation--item--text-decoration);
+				padding: var(--wp--custom--navigation--link--padding);
+			}
+
+			&:hover, &:focus {
+				
+				& > .wp-block-navigation-item__content {
+					border-color: var(--wp--custom--navigation--hover--border--color);
+					text-decoration: var(--wp--custom--navigation--hover--text-decoration);
+				}
+			}
+			
+			// all current menu items and current menu ancestors
+			// placement of ancestor class is inconsistent based on type of menu
+			&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor) {
+				& > .wp-block-navigation-item__content {
+					background-color: var(--wp--custom--navigation--current--color--background);
+					border-color: var(--wp--custom--navigation--current--border--color);
+				}
+			}
+		}
 	}
 
 	// has a submenu
@@ -88,6 +111,8 @@
 		// only on desktop, set the colors of the submenu container if none are selected
 		@include break-small() {
 			.wp-block-navigation__submenu-container {
+				left: 0;
+
 				&:not(.has-background) {
 					.wp-block-navigation-item {
 						background-color: var(--wp--custom--navigation--submenu--color--background);
@@ -97,6 +122,16 @@
 				&:not(.has-text-color) {
 					.wp-block-navigation-item {
 						color: var(--wp--custom--navigation--submenu--color--text);
+					}
+				}
+			}
+
+			// align the last one right if we think it is on the right
+			*:where(.is-content-justification-right, .is-content-justification-space-between) & {
+				&:last-of-type {
+					.wp-block-navigation__submenu-container {
+						left: auto;
+						right: 0;
 					}
 				}
 			}
@@ -145,13 +180,10 @@
 
 			& > .wp-block-navigation-item__content {
 				border: 0; // override border on the button and move it down into the span
-				padding: var(--wp--custom--navigation--item--padding);
 				padding-inline-end: var(--wp--preset--spacing--20);
 
 				span {
-					border-bottom: var(--wp--custom--navigation--hover--border--width) var(--wp--custom--navigation--hover--border--style) transparent;
 					display: inline-block; // to be able to add padding
-					padding: var(--wp--custom--navigation--link--padding);
 				}	
 			
 				// only on desktop
@@ -165,11 +197,6 @@
 						}
 					}
 	
-					&:hover, &:focus {
-						span {
-							border-bottom-color: var(--wp--custom--navigation--hover--border--color);
-						}
-					}
 				}
 				
 			}
@@ -177,13 +204,37 @@
 			&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor){
 				& > .wp-block-navigation-item__content span {
 					background-color: var(--wp--custom--navigation--current--color--background);
-					border-color: var(--wp--custom--navigation--current--border--color);
 					text-decoration: var(--wp--custom--navigation--current--text-decoration);
 				}
 			}
 
 			.wp-block-navigation__submenu-icon {
 				color: currentColor;
+			}
+		}	
+		
+		// open on click in Header
+		.site-header & {
+			&.open-on-click {
+				// override padding on the list item and move it down into the button
+				padding: 0; 
+
+				& > .wp-block-navigation-item__content {
+					padding: var(--wp--custom--navigation--item--padding);
+
+					span {
+						border-bottom: var(--wp--custom--navigation--hover--border--width) var(--wp--custom--navigation--hover--border--style) transparent;
+						padding: var(--wp--custom--navigation--link--padding);
+					}	
+					
+				}
+
+				// move these styles down into the button also
+				&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor){
+					& > .wp-block-navigation-item__content span {
+						border-color: var(--wp--custom--navigation--current--border--color);
+					}
+				}
 			}
 		}		
 	
@@ -336,6 +387,7 @@
 
 			.wp-block-navigation {
 				font-size: var(--wp--preset--font-size--emphasis);
+				gap: 0;
 			}	
 
 			.wp-block-navigation__submenu-container {
@@ -344,6 +396,10 @@
 
 			// override default WP styles so the padding doesn't change
 			&.is-menu-open {
+				.wp-block-navigation {
+					gap: 0;
+				}	
+
 				.wp-block-navigation-item:where(:not(.open-on-click)) {
 					padding: var(--wp--custom--navigation--item--padding);
 

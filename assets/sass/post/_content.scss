@@ -14,7 +14,7 @@
 	// to help with typographic alignment
 	h1, h2, h3, h4, h5, h6, p, ol, ul {
 		&:first-of-type {
-			margin-top: 0;
+			margin-block-start: 0;
 		}
 	}
 }
