@@ -186,44 +186,44 @@
 			},
 			"spacingSizes": [
 				{
-					"name": ".5",
-					"size": ".3rem",
-					"slug": "05"
-				},
-				{
 					"name": "1",
-					"size": "min(.75rem, 2.5vw)",
+					"size": ".5rem",
 					"slug": "10"
 				},
 				{
 					"name": "2",
-					"size": "min(1.1rem, 3vw)",
+					"size": "clamp(0.857rem, calc(0.857rem + ((1vw - 0.25rem) * 0.22)), 1rem)",
 					"slug": "20"
 				},
 				{
 					"name": "3",
-					"size": "min(1.75rem, 4vw)",
+					"size": "clamp(1.125rem, calc(1.125rem + ((1vw - 0.25rem) * 0.5769)), 1.5rem)",
 					"slug": "30"
 				},
 				{
 					"name": "4",
-					"size": "min(2.5rem, 5vw)",
+					"size": "clamp(1.5rem, calc(1.5rem + ((1vw - 0.25rem) * 0.7692)), 2rem)",
 					"slug": "40"
 				},
 				{
 					"name": "5",
-					"size": "min(4rem, 7vw)",
+					"size": "clamp(2rem, calc(2rem + ((1vw - 0.25rem) * 1.5385)), 3rem)",
 					"slug": "50"
 				},
 				{
 					"name": "6",
-					"size": "min(6.5rem, 9vw)",
+					"size": "clamp(2.5rem, calc(2.5rem + ((1vw - 0.25rem) * 1.5385)), 3.5rem)",
 					"slug": "60"
 				},
 				{
 					"name": "7",
-					"size": "min(10.5rem, 13vw)",
+					"size": "clamp(3rem, calc(3rem + ((1vw - 0.25rem) * 2.3077)), 4.5rem)",
 					"slug": "70"
+				},
+				{
+					"name": "8",
+					"size": "clamp(4rem, calc(4rem + ((1vw - 0.25rem) * 3.0769)), 6rem)",
+					"slug": "80"
 				}
 			]
 		},
@@ -244,58 +244,368 @@
 					"name": "System Font"
 				},
 				{
-					"fontFamily": "Arvo, serif",
-					"slug": "arvo",
-					"name": "Arvo",
-					"provider": "alicorn-fonts"
-				},
-				{
 					"fontFamily": "'Bodoni Moda', serif",
 					"slug": "bodoni-moda",
 					"name": "Bodoni Moda",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Bodoni Moda",
+							"fontWeight": "400 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/bodoni-moda/bodoni-moda-400-900.woff2" ]
+						},
+						{
+							"fontFamily": "Bodoni Moda",
+							"fontWeight": "400 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/bodoni-moda/bodoni-moda-400-900-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Cabin, sans-serif",
 					"slug": "cabin",
 					"name": "Cabin",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Cabin",
+							"fontWeight": "400 700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/cabin/cabin-400-700.woff2" ]
+						},
+						{
+							"fontFamily": "Cabin",
+							"fontWeight": "400 700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/cabin/cabin-400-700-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Chivo, sans-serif",
 					"slug": "chivo",
 					"name": "Chivo",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Chivo",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/chivo/chivo-Light.woff2" ]
+						},
+						{
+							"fontFamily": "Chivo",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/chivo/chivo-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Chivo",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/chivo/chivo-Regular.woff2" ]
+						},
+						{
+							"fontFamily": "Chivo",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/chivo/chivo-Regular-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Chivo",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/chivo/chivo-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Chivo",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/chivo/chivo-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Chivo",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/chivo/chivo-Black.woff2" ]
+						},
+						{
+							"fontFamily": "Chivo",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/chivo/chivo-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Courier Prime', serif",
 					"slug": "courier-prime",
 					"name": "Courier Prime",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Courier Prime",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/courier-prime/courier-prime-Regular.woff2" ]
+						},
+						{
+							"fontFamily": "Courier Prime",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/courier-prime/courier-prime-Regular-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Courier Prime",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/courier-prime/courier-prime-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Courier Prime",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/courier-prime/courier-prime-Bold-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'DM Sans', sans-serif",
 					"slug": "dm-sans",
 					"name": "DM Sans",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "DM Sans",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/dm-sans/dm-sans-Regular.woff2" ]
+						},
+						{
+							"fontFamily": "DM Sans",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/dm-sans/dm-sans-Regular-italic.woff2" ]
+						},
+						{
+							"fontFamily": "DM Sans",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/dm-sans/dm-sans-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "DM Sans",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/dm-sans/dm-sans-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "DM Sans",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/dm-sans/dm-sans-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "DM Sans",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/dm-sans/dm-sans-Bold-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Domine, serif",
 					"slug": "domine",
 					"name": "Domine",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Domine",
+							"fontWeight": "400 700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/domine/domine-400-700.woff2" ]
+						},
+						{
+							"fontFamily": "Domine",
+							"fontWeight": "400 700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/domine/domine-400-700-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'EB Garamond', serif",
 					"slug": "eb-garamond",
 					"name": "EB Garamond",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "EB Garamond",
+							"fontWeight": "400 800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/eb-garamond/eb-garamond-400-800.woff2" ]
+						},
+						{
+							"fontFamily": "EB Garamond",
+							"fontWeight": "400 800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/eb-garamond/eb-garamond-400-800-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Fira Sans', sans-serif",
 					"slug": "fira-sans",
 					"name": "Fira Sans",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "100",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Thin.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "100",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Thin-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-ExtraLight.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-ExtraLight-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Light.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-regular.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-SemiBold.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-SemiBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-ExtraBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-ExtraBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Black.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Helvetica Neue','Helvetica', 'Arial', sans-serif",
@@ -306,133 +616,1345 @@
 					"fontFamily": "'IBM Plex Mono', monospace",
 					"slug": "ibm-plex-mono",
 					"name": "IBM Plex Mono",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "100",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Thin.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "100",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Thin-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-ExtraLight.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-ExtraLight-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Light.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-regular.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-SemiBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-SemiBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-ExtraBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-ExtraBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Black.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/ibm-plex-mono/ibm-plex-mono-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Inter, sans-serif",
 					"slug": "inter",
 					"name": "Inter",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Inter",
+							"fontWeight": "100 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/inter/inter-100-900.woff2" ]
+						},
+						{
+							"fontFamily": "Inter",
+							"fontWeight": "100 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/inter/inter-100-900-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Josefin Sans', sans-serif",
 					"slug": "josefin-sans",
 					"name": "Josefin Sans",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Josefin Sans",
+							"fontWeight": "100 700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/josefin-sans/josefin-sans-100-700.woff2" ]
+						},
+						{
+							"fontFamily": "Josefin Sans",
+							"fontWeight": "100 700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/josefin-sans/josefin-sans-100-700-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Libre Baskerville', serif",
 					"slug": "libre-baskerville",
 					"name": "Libre Baskerville",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Libre Baskerville",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/libre-baskerville/libre-baskerville-Regular.woff2" ]
+						},
+						{
+							"fontFamily": "Libre Baskerville",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/libre-baskerville/libre-baskerville-Regular-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Libre Baskerville",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/libre-baskerville/libre-baskerville-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Libre Baskerville",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/libre-baskerville/libre-baskerville-Bold-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Libre Franklin', sans-serif",
 					"slug": "libre-franklin",
 					"name": "Libre Franklin",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Libre Franklin",
+							"fontWeight": "100 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/libre-franklin/libre-franklin-100-900.woff2" ]
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontWeight": "100 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/libre-franklin/libre-franklin-100-900-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Lora, serif",
 					"slug": "lora",
 					"name": "Lora",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Lora",
+							"fontWeight": "400 700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/lora/lora-400-700.woff2" ]
+						},
+						{
+							"fontFamily": "Lora",
+							"fontWeight": "400 700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/lora/lora-400-700-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Merriweather, serif",
 					"slug": "merriweather",
 					"name": "Merriweather",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "100",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Thin.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "100",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Thin-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-ExtraLight.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-ExtraLight-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Light.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-regular.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-SemiBold.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-SemiBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Merriweather",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-ExtraBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-ExtraBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Black.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/merriweather/merriweather-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Montserrat, sans-serif",
 					"slug": "montserrat",
 					"name": "Montserrat",
-					"provider": "alicorn-fonts"
-				},
-				{
-					"fontFamily": "Nunito, sans-serif",
-					"slug": "nunito",
-					"name": "Nunito",
-					"provider": "alicorn-fonts"
-				},
-				{
-					"fontFamily": "'Open Sans', sans-serif",
-					"slug": "open-sans",
-					"name": "Open Sans",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "100",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Thin.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "100",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Thin-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-ExtraLight.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-ExtraLight-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Light.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-regular.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-SemiBold.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-SemiBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-ExtraBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-ExtraBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Black.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/montserrat-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Overpass, sans-serif",
 					"slug": "overpass",
 					"name": "Overpass",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "100",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Thin.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "100",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Thin-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-ExtraLight.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-ExtraLight-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Light.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-regular.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-SemiBold.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-SemiBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Overpass",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-ExtraBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-ExtraBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Black.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/overpass/overpass-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Playfair Display', serif",
 					"slug": "playfair-display",
 					"name": "Playfair Display",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Playfair Display",
+							"fontWeight": "400 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/playfair-display/playfair-display-400-900.woff2" ]
+						},
+						{
+							"fontFamily": "Playfair Display",
+							"fontWeight": "400 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/playfair-display/playfair-display-400-900-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Poppins, sans-serif",
 					"slug": "poppins",
 					"name": "Poppins",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "100",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Thin.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "100",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Thin-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-ExtraLight.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-ExtraLight-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Light.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-regular.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-SemiBold.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-SemiBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-ExtraBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-ExtraBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Black.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/poppins/poppins-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Raleway, sans-serif",
 					"slug": "raleway",
 					"name": "Raleway",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Raleway",
+							"fontWeight": "100 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/raleway/raleway-100-900.woff2" ]
+						},
+						{
+							"fontFamily": "Raleway",
+							"fontWeight": "100 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/raleway/raleway-100-900-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Red Hat Display', sans-serif",
 					"slug": "red-hat-display",
 					"name": "Red Hat Display",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Red Hat Display",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/red-hat-display/red-hat-display-Regular.woff2" ]
+						},
+						{
+							"fontFamily": "Red Hat Display",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/red-hat-display/red-hat-display-Regular-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Roboto, sans-serif",
 					"slug": "roboto",
 					"name": "Roboto",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "100",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Thin.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "100",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Thin-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-ExtraLight.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-ExtraLight-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Light.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-regular.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-SemiBold.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-SemiBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-ExtraBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-ExtraBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Black.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto/roboto-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Roboto Slab', sans-serif",
 					"slug": "roboto-slab",
 					"name": "Roboto Slab",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Roboto Slab",
+							"fontWeight": "100 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto-slab/roboto-slab-100-900.woff2" ]
+						},
+						{
+							"fontFamily": "Roboto Slab",
+							"fontWeight": "100 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/roboto-slab/roboto-slab-100-900-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "Rubik, sans-serif",
 					"slug": "rubik",
 					"name": "Rubik",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Rubik",
+							"fontWeight": "300 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/rubik/rubik-300-900.woff2" ]
+						},
+						{
+							"fontFamily": "Rubik",
+							"fontWeight": "300 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/rubik/rubik-300-900-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Source Sans Pro', sans-serif",
 					"slug": "source-sans-pro",
 					"name": "Source Sans Pro",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "100",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Thin.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "100",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Thin-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-ExtraLight.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-ExtraLight-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Light.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-regular.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-SemiBold.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-SemiBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-ExtraBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-ExtraBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Black.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Source Serif Pro', sans-serif",
 					"slug": "source-serif-pro",
 					"name": "Source Serif Pro",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "100",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Thin.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "100",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Thin-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-ExtraLight.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "200",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-ExtraLight-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Light.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Light-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-regular.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Medium.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Medium-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-SemiBold.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "600",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-SemiBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Bold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Source Serif Pro",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-ExtraBold.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-ExtraBold-italic.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Black.woff2" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-Black-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Space Mono', sans-serif",
 					"slug": "space-mono",
 					"name": "Space Mono",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Space Mono",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/space-mono/space-mono-Regular.woff2" ]
+						},
+						{
+							"fontFamily": "Space Mono",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/space-mono/space-mono-Regular-italic.woff2" ]
+						},
+						{
+							"fontFamily": "Space Mono",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/space-mono/space-mono-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Space Mono",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/space-mono/space-mono-Bold-italic.woff2" ]
+						}
+					]
 				},
 				{
 					"fontFamily": "'Work Sans', sans-serif",
 					"slug": "work-sans",
 					"name": "Work Sans",
-					"provider": "alicorn-fonts"
+					"fontFace": [
+						{
+							"fontFamily": "Work Sans",
+							"fontWeight": "100 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/work-sans/work-sans-100-900.woff2" ]
+						},
+						{
+							"fontFamily": "Work Sans",
+							"fontWeight": "100 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/work-sans/work-sans-100-900-italic.woff2" ]
+						}
+					]
 				}
 			],
 			"fontSizes": [

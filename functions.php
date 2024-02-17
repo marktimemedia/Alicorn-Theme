@@ -91,29 +91,13 @@ function alicorn_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'alicorn_scripts' );
 
-
 /**
- * Customize Global Styles
+ * Include the rest of the theme files
  */
-require get_template_directory() . '/includes/fonts/custom-fonts.php';
+foreach ( glob( __DIR__ . '/includes/*.php' ) as $alicorn_filename ) {
+	if ( preg_match( '#/includes/_#i', $alicorn_filename ) ) {
+		continue; // Ignore files prefixed with an underscore.
+	}
 
-
-/**
- * Block Patterns
- */
-require get_template_directory() . '/includes/block-patterns.php';
-
-// Add the child theme patterns if they exist.
-if ( file_exists( get_stylesheet_directory() . '/includes/block-patterns.php' ) ) {
-	require_once get_stylesheet_directory() . '/includes/block-patterns.php';
-}
-
-/**
- * Block Styles
- */
-require get_template_directory() . '/includes/block-styles.php';
-
-// Add the child theme patterns if they exist.
-if ( file_exists( get_stylesheet_directory() . '/includes/block-styles.php' ) ) {
-	require_once get_stylesheet_directory() . '/includes/block-styles.php';
+	include $alicorn_filename;
 }
