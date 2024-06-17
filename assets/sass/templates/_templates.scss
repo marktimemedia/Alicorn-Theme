@@ -9,3 +9,17 @@
 body {
 	background-color: var(--wp--custom--color--background);
 }
+
+.wp-block-post-template {
+
+	.post-meta {
+		font-size: var(--wp--preset--font-size--small);
+		padding-inline-start: 0;
+		padding-inline-end: 0;
+	}
+
+	.wp-block-post-title {
+		font-size: var(--wp--preset--font-size--medium);
+	}
+
+}

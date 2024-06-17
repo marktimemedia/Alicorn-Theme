@@ -1,5 +1,5 @@
 // Needed until https://github.com/WordPress/gutenberg/issues/35267 is resolved.
-.wp-block-post-content { // Only apply these rules in the post content.
+.entry-content, .wp-block-post-content { // Only apply these rules in the post content.
 	clear: both;
 	overflow: visible;
 
@@ -7,14 +7,29 @@
 	*[class^="wp-container"] > * + p,
 	*[class^="wp-container"] > p + *,
 	p {
-		margin-top: var(--wp--custom--gap--vertical);
-		margin-bottom: var(--wp--custom--gap--vertical);
+		margin-block-start: var(--wp--custom--gap--baseline);
+		margin-block-end: var(--wp--custom--gap--baseline);
 	}
 
-	// to help with typographic alignment
-	h1, h2, h3, h4, h5, h6, p, ol, ul {
-		&:first-of-type {
-			margin-block-start: 0;
+	& > h1, & > h2 {
+		&:first-child {
+			margin-block-start: var(--wp--preset--spacing--40);
+		}
+	}
+
+	& > h3, & > h4, & > h5, & > h6 {
+		&:first-child {
+			margin-block-start: var(--wp--custom--gap--vertical);
+		}
+		
+	}
+
+	[class*="wp-block"] {
+		// alignment inside another block
+		h1, h2, h3, h4, h5, h6, ol, ul, p {
+			&:first-of-type {
+				margin-block-start: 0;
+			}
 		}
 	}
 }

@@ -1,0 +1,35 @@
+/** Cover **/
+:where(.wp-block-cover-image:not(.has-text-color)), :where(.wp-block-cover:not(.has-text-color)) {
+	color: var(--wp--custom--color--background);
+}
+
+/** Gallery **/
+.wp-block-gallery {
+	.blocks-gallery-image,
+	.blocks-gallery-item {
+		figcaption {
+			font-size: var(--wp--custom--gallery--caption--font-size); // See https://github.com/WordPress/gutenberg/issues/34643.
+		}
+	}
+}
+
+/** Image **/
+.wp-block-image {
+	/*
+	From what I can tell the below are styles regularly used by themes
+	to fix the image block.  I believe these should go into the block's
+	default styles.  It's difficult to say how this will land, however
+	based on discussion found in (many) related issues here:
+	https://github.com/WordPress/gutenberg/issues/28923
+	https://github.com/WordPress/gutenberg/issues/29506
+	*/
+	text-align: center;
+}
+
+/** Video **/
+.wp-block-video {
+	figcaption { // https://github.com/WordPress/gutenberg/issues/34642
+		margin: var(--wp--custom--video--caption--margin);
+		text-align: var(--wp--custom--video--caption--text-align);
+	}
+}

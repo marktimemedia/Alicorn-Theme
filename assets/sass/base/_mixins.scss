@@ -59,6 +59,7 @@
 	color: var(--wp--custom--button--color--text);
 	background-color: var(--wp--custom--button--color--background);
 	border-color: var(--wp--custom--button--border--color);
+	background-clip: border-box;
 	svg {
 		fill: var(--wp--custom--button--color--text);
 	}
@@ -90,7 +91,7 @@
 // See https://github.com/WordPress/gutenberg/issues/4543
 @mixin button-hover-styles {
 	//The following changes should ONLY be changed if the user has NOT set a custom color
-	&:not(.has-background):not(.has-text-color) {
+	&:where(:not(.has-background):not(.has-text-color)) {
 		&:hover,
 		&:focus,
 		&.has-focus {
@@ -100,13 +101,27 @@
 			--wp--custom--button--border--color: var(--wp--custom--button--hover--border--color);
 			@include button-color-styles;
 		}
+		&:active {
+			--wp--custom--button--color--text: var(--wp--custom--button--active--color--text);
+			--wp--custom--button--color--background: var(--wp--custom--button--active--color--background);
+			--wp--custom--button--border--color: var(--wp--custom--button--active--border--color);
+		}
 	}
 	// there are no hover states for custom color buttons right now, let's give it a filter to indicate change
 	&.has-background, &.has-text-color {
-		&:hover,
-		&:focus,
-		&.has-focus {
+		&:hover {
 			filter: brightness(0.8);
 		}
+		&:focus,
+		&.has-focus {
+			filter: brightness(1);
+		}
+		&:active {
+			filter: brightness(0.7);
+		}
+	}
+
+	&:hover, &:focus {
+		text-decoration: none;
 	}
 }

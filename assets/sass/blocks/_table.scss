@@ -1,24 +1,68 @@
-.wp-block-table.is-style-stripes,
+/** Tables **/
 .wp-block-table {
+	table {
+		border: var(--wp--custom--table--border--width) var(--wp--custom--table--border--style) var(--wp--custom--table--border--color);
+	}
+	
 	figcaption { // See https://github.com/WordPress/gutenberg/issues/34650
-		color: var(--wp--preset--color--foreground);
+		color: var(--wp--custom--color--foreground);
 		font-size: var(--wp--custom--table--figcaption--typography--font-size);
 		text-align: center;
 	}
 
 	td, th {
 		// See https://github.com/WordPress/gutenberg/issues/31261
-		border: 1px solid;
-		padding: var(--wp--preset--spacing-10) var(--wp--preset--spacing-10);
+		background-color: var(--wp--custom--table--color--background);
+		border-color: inherit;
+		font-size: var(--wp--custom--table--typography--font-size);
+		font-weight: var(--wp--custom--table--typography--font-weight);
+		text-align: var(--wp--custom--table--typography--text-align);
+		vertical-align: var(--wp--custom--table--typography--vertical-align);
+		padding: var(--wp--custom--table--spacing--cell-padding);
 	}
 
-	border-bottom: none;
+	thead {
+		border-width: inherit;
+		border-color: inherit;
+		th {
+			background-color: var(--wp--custom--table--header--color--background);
+			font-weight: var(--wp--custom--table--header--typography--font-weight);
+			vertical-align: var(--wp--custom--table--header--typography--vertical-align);
+		}
+	}
+
+	tfoot {
+		border-top-width: inherit;
+		font-weight: var(--wp--custom--table--header--typography--font-weight);
+	}
+
+	table[style*=border-width] {
+		td, th {
+			border-style: var(--wp--custom--table--border--style);
+		}
+	}
+
+	table[class*=border-color] {
+		td, th {
+			border-color: inherit !important;
+		}
+	}
+
+	table[class*=background-color] {
+		thead {
+			th {
+				background-color: rgba(0,0,0,.15);
+			}
+		}
+	}
 }
 
 .wp-block-table.is-style-stripes {
-	tbody {
-		tr:nth-child(odd) {
-			background-color: var(--wp--custom--table--striped--color--background);
+	
+	tr:nth-child(odd) {
+		background-color: rgba(0,0,0,.1) !important;
+		th {
+			background-color: rgba(0,0,0,.1);
 		}
 	}
 }

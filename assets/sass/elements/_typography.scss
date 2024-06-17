@@ -1,5 +1,6 @@
 // Default link styles
 a:where(:not(.wp-block-button__link, .button)) {
+	color: var(--wp--custom--color--interactive);
 
 	&:hover,
 	&:focus {

@@ -1,5 +1,8 @@
 :root {
 	--wpadmin-bar--height: 46px;
+	@include break-small() {
+		--wpadmin-bar--height: 32px;
+	}
 }
 
 .wp-site-blocks {
@@ -8,6 +11,14 @@
 	flex-direction: column;
 	padding: 0;
 	position: relative;
+}
+
+body.admin-bar {
+
+	.wp-site-blocks {
+		min-height: calc( 100vh - var(--wpadmin-bar--height) );
+		margin-top: var(--wpadmin-bar--height);
+	}
 }
 
 // Override core block settings
@@ -38,16 +49,6 @@ header.wp-block-template-part, footer.wp-block-template-part {
 
 .site-footer-container {
 	margin-top: auto;
-}
-
-body.admin-bar {
-	@include break-small() {
-		--wpadmin-bar--height: 32px;
-	}
-
-	.wp-site-blocks {
-		min-height: calc( 100vh - var(--wpadmin-bar--height) );
-	}
 }
 
 .sticky-header-enabled {

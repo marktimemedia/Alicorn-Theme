@@ -186,6 +186,11 @@
 			},
 			"spacingSizes": [
 				{
+					"name": "05",
+					"size": ".3rem",
+					"slug": "05"
+				},
+				{
 					"name": "1",
 					"size": ".5rem",
 					"slug": "10"
@@ -585,21 +590,21 @@
 							"src": [ "file:./assets/fonts/fira-sans/fira-sans-ExtraBold.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Fira Sans",
 							"fontWeight": "800",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/fira-sans/fira-sans-ExtraBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Fira Sans",
 							"fontWeight": "900",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/fira-sans/fira-sans-Black.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Fira Sans",
 							"fontWeight": "900",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
@@ -871,34 +876,6 @@
 					"fontFace": [
 						{
 							"fontFamily": "Merriweather",
-							"fontWeight": "100",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-Thin.woff2" ]
-						},
-						{
-							"fontFamily": "Merriweather",
-							"fontWeight": "100",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-Thin-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Merriweather",
-							"fontWeight": "200",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-ExtraLight.woff2" ]
-						},
-						{
-							"fontFamily": "Merriweather",
-							"fontWeight": "200",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-ExtraLight-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Merriweather",
 							"fontWeight": "300",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -923,35 +900,7 @@
 							"fontWeight": "400",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-italic.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "500",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-Medium.woff2" ]
-						},
-						{
-							"fontFamily": "Merriweather",
-							"fontWeight": "500",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-Medium-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Merriweather",
-							"fontWeight": "600",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-SemiBold.woff2" ]
-						},
-						{
-							"fontFamily": "Merriweather",
-							"fontWeight": "600",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-SemiBold-italic.woff2" ]
+							"src": [ "file:./assets/fonts/merriweather/merriweather-regular-italic.woff2" ]
 						},
 						{
 							"fontFamily": "IBM Plex Mono",
@@ -966,20 +915,6 @@
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/merriweather/merriweather-Bold-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Merriweather",
-							"fontWeight": "800",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-ExtraBold.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "800",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/merriweather/merriweather-ExtraBold-italic.woff2" ]
 						},
 						{
 							"fontFamily": "IBM Plex Mono",
@@ -1004,262 +939,17 @@
 					"fontFace": [
 						{
 							"fontFamily": "Montserrat",
-							"fontWeight": "100",
+							"fontWeight": "100 900",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Thin.woff2" ]
+							"src": [ "file:./assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf" ]
 						},
 						{
 							"fontFamily": "Montserrat",
-							"fontWeight": "100",
+							"fontWeight": "100 900",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Thin-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "200",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-ExtraLight.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "200",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-ExtraLight-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "300",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Light.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "300",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Light-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-regular.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "400",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-italic.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "500",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Medium.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "500",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Medium-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "600",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-SemiBold.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "600",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-SemiBold-italic.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Bold.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "700",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Bold-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Montserrat",
-							"fontWeight": "800",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-ExtraBold.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "800",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-ExtraBold-italic.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "900",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Black.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "900",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/montserrat/montserrat-Black-italic.woff2" ]
-						}
-					]
-				},
-				{
-					"fontFamily": "Overpass, sans-serif",
-					"slug": "overpass",
-					"name": "Overpass",
-					"fontFace": [
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "100",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Thin.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "100",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Thin-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "200",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-ExtraLight.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "200",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-ExtraLight-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "300",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Light.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "300",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Light-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-regular.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "400",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-italic.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "500",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Medium.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "500",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Medium-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "600",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-SemiBold.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "600",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-SemiBold-italic.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Bold.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "700",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Bold-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Overpass",
-							"fontWeight": "800",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-ExtraBold.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "800",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-ExtraBold-italic.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "900",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Black.woff2" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontWeight": "900",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/overpass/overpass-Black-italic.woff2" ]
+							"src": [ "file:./assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf" ]
 						}
 					]
 				},
@@ -1346,7 +1036,7 @@
 							"src": [ "file:./assets/fonts/poppins/poppins-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Poppins",
 							"fontWeight": "500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -1374,7 +1064,7 @@
 							"src": [ "file:./assets/fonts/poppins/poppins-SemiBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Poppins",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -1395,21 +1085,21 @@
 							"src": [ "file:./assets/fonts/poppins/poppins-ExtraBold.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Poppins",
 							"fontWeight": "800",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/poppins/poppins-ExtraBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Poppins",
 							"fontWeight": "900",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/poppins/poppins-Black.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Poppins",
 							"fontWeight": "900",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
@@ -1570,21 +1260,21 @@
 							"src": [ "file:./assets/fonts/roboto/roboto-ExtraBold.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Roboto",
 							"fontWeight": "800",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/roboto/roboto-ExtraBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Roboto",
 							"fontWeight": "900",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/roboto/roboto-Black.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Roboto",
 							"fontWeight": "900",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
@@ -1696,7 +1386,7 @@
 							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Source Sans Pro",
 							"fontWeight": "500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -1724,7 +1414,7 @@
 							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-SemiBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Source Sans Pro",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -1745,21 +1435,21 @@
 							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-ExtraBold.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Source Sans Pro",
 							"fontWeight": "800",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-ExtraBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Source Sans Pro",
 							"fontWeight": "900",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/source-sans-pro/source-sans-pro-Black.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Source Sans Pro",
 							"fontWeight": "900",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
@@ -1829,7 +1519,7 @@
 							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Source Serif Pro",
 							"fontWeight": "500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -1857,7 +1547,7 @@
 							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-SemiBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Source Serif Pro",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -1878,14 +1568,14 @@
 							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-ExtraBold.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Source Serif Pro",
 							"fontWeight": "800",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/source-serif-pro/source-serif-pro-ExtraBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Source Serif Pro",
 							"fontWeight": "900",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -1959,53 +1649,50 @@
 			],
 			"fontSizes": [
 				{
+					"slug": "xx-small",
+					"size": "10px",
+					"name": "XX-Small",
+					"fluid": false
+				},
+				{
 					"slug": "x-small",
 					"size": "12px",
 					"name": "X-Small",
-					"fluid": {
-						"min": "11px",
-						"max": "12px"
-					}
+					"fluid": false
 				},
 				{
 					"slug": "small",
 					"size": "14px",
 					"name": "Small",
-					"fluid": {
-						"min": "12px",
-						"max": "14px"
-					}
+					"fluid": false
 				},
 				{
 					"slug": "normal",
 					"size": "16px",
 					"name": "Normal",
-					"fluid": {
-						"min": "14px",
-						"max": "16px"
-					}
+					"fluid": false
 				},
 				{
 					"slug": "emphasis",
-					"size": "20px",
+					"size": "22px",
 					"name": "Emphasis",
 					"fluid": {
 						"min": "18px",
-						"max": "20px"
+						"max": "22px"
 					}
 				},
 				{
 					"slug": "medium",
-					"size": "24px",
+					"size": "28px",
 					"name": "Medium",
 					"fluid": {
-						"min": "18px",
-						"max": "24px"
+						"min": "22px",
+						"max": "28px"
 					}
 				},
 				{
 					"slug": "large",
-					"size": "32px",
+					"size": "36px",
 					"name": "Large",
 					"fluid": {
 						"min": "28px",
@@ -2047,9 +1734,11 @@
 				"background": "var(--wp--preset--color--white)",
 				"interactive": "var(--wp--preset--color--primary)",
 				"interactiveHover": "var(--wp--preset--color--primary-dark)",
+				"interactiveActive": "var(--wp--preset--color--primary-dark)",
 				"uiBorder": "var(--wp--preset--color--gray-500)",
 				"warn": "#EB7100",
 				"error": "#D70404",
+				"success": "#008563",
 				"focus": "var(--wp--preset--color--primary-light)"
 			},
 			"alignment": {
@@ -2064,6 +1753,9 @@
 					"color": {
 						"background": "var(--wp--custom--color--interactive)",
 						"text": "var(--wp--custom--color--background)"
+					},
+					"border": {
+						"color": "transparent"
 					}
 				},
 				"focus": {
@@ -2078,7 +1770,7 @@
 						"width": "1px"
 					},
 					"border": {
-						"color": "var(--wp--custom--color--interactive-hover)"
+						"color": "transparent"
 					}
 				},
 				"hover": {
@@ -2087,11 +1779,11 @@
 						"text": "var(--wp--custom--color--background)"
 					},
 					"border": {
-						"color": "var(--wp--custom--color--interactive-hover)"
+						"color": "transparent"
 					}
 				},
 				"border": {
-					"color": "var(--wp--custom--color--interactive)",
+					"color": "transparent",
 					"radius": "4px",
 					"style": "solid",
 					"width": "2px"
@@ -2116,6 +1808,7 @@
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--normal)",
+					"fontStyle": "normal",
 					"fontWeight": "normal",
 					"lineHeight": 1.2
 				},
@@ -2199,13 +1892,16 @@
 			"body": {
 				"typography": {
 					"lineHeight": 1.6,
-					"fontWeight": 400
+					"fontFamily": "var(--wp--preset--font-family--montserrat)",
+					"fontWeight": 400,
+					"margin": "var(--wp--custom--gap--vertical)"
 				}
 			},
 			"heading": {
 				"typography": {
 					"fontWeight": 400,
-					"lineHeight": 1.125
+					"lineHeight": 1.125,
+					"margin": "var(--wp--custom--gap--vertical)"
 				}
 			},
 			"subheading": {
@@ -2283,6 +1979,33 @@
 					"margin": "1em"
 				}
 			},
+			"pagination": {
+				"border": {
+					"color": "var(--wp--custom--color--ui-border)",
+					"radius": "2px",
+					"style": "solid",
+					"width": "1px"
+				},
+				"color": {
+					"background": "transparent",
+					"text": "inherit" 
+				},
+				"padding": ".75em 1em",
+				"hover" : {
+					"border": {
+						"color": "var(--wp--custom--color--foreground)"
+					}
+				},
+				"active" : {
+					"border": {
+						"color": "var(--wp--custom--color--foreground)"
+					},
+					"color": {
+						"background": "var(--wp--custom--color--foreground)",
+						"text": "var(--wp--custom--color--background)" 
+					}
+				}
+			},
 			"paragraph": {
 				"dropcap": {
 					"margin": ".1em .1em 0 0",
@@ -2297,12 +2020,12 @@
 					},
 					":hover": {
 						"typography": {
-							"textDecoration": "none"
+							"textDecoration": "underline dotted"
 						}
 					},
 					":focus": {
 						"typography": {
-							"textDecoration": "none"
+							"textDecoration": "underline"
 						}
 					}
 				}
@@ -2448,24 +2171,17 @@
 		},
 		"typography": {
 			"fontSize": "var(--wp--preset--font-size--normal)",
+			"fontFamily": "var(--wp--custom--body--typography--font-family)",
 			"fontWeight": "var(--wp--custom--body--typography--font-weight)",
 			"lineHeight": "var(--wp--custom--body--typography--line-height)"
 		},
 		"elements": {
-			"h1": {
+			"heading": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--xx-large)",
-					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
-					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
-				},
-				"spacing": {
-					"margin": {
-						"top": "var(--wp--custom--gap--vertical)",
-						"bottom": "var(--wp--custom--gap--vertical)"
-					}
+					"fontFamily": "var(--wp--preset--font-family--montserrat)"
 				}
 			},
-			"h2": {
+			"h1": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--x-large)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
@@ -2474,11 +2190,11 @@
 				"spacing": {
 					"margin": {
 						"top": "var(--wp--custom--gap--vertical)",
-						"bottom": "var(--wp--custom--gap--vertical)"
+						"bottom": "var(--wp--custom--gap--baseline)"
 					}
 				}
 			},
-			"h3": {
+			"h2": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--large)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
@@ -2487,20 +2203,33 @@
 				"spacing": {
 					"margin": {
 						"top": "var(--wp--custom--gap--vertical)",
-						"bottom": "var(--wp--custom--gap--vertical)"
+						"bottom": "var(--wp--custom--gap--baseline)"
+					}
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
+					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--custom--gap--vertical)",
+						"bottom": "var(--wp--custom--gap--baseline)"
 					}
 				}
 			},
 			"h4": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontSize": "var(--wp--preset--font-size--emphasis)",
 					"fontWeight": "var(--wp--custom--subheading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--subheading--typography--line-height)"
 				},
 				"spacing": {
 					"margin": {
 						"top": "var(--wp--custom--gap--vertical)",
-						"bottom": "var(--wp--custom--gap--vertical)"
+						"bottom": "var(--wp--custom--gap--baseline)"
 					}
 				}
 			},
@@ -2513,7 +2242,7 @@
 				"spacing": {
 					"margin": {
 						"top": "var(--wp--custom--gap--vertical)",
-						"bottom": "var(--wp--custom--gap--vertical)"
+						"bottom": "var(--wp--custom--gap--baseline)"
 					}
 				}
 			},
@@ -2526,7 +2255,7 @@
 				"spacing": {
 					"margin": {
 						"top": "var(--wp--custom--gap--vertical)",
-						"bottom": "var(--wp--custom--gap--vertical)"
+						"bottom": "var(--wp--custom--gap--baseline)"
 					}
 				}
 			},
@@ -2535,14 +2264,14 @@
 					"text": "var(--wp--custom--color--interactive)"
 				},
 				"typography": {
-					"textDecoration": "none"
+					"textDecoration": "var(--wp--custom--paragraph--link--typography--text-decoration)"
 				},
 				":hover" : {
 					"color": {
 						"text": "var(--wp--custom--color--interactive-hover)"
 					},
 					"typography": {
-						"textDecoration": "underline"
+						"textDecoration": "var(--wp--custom--paragraph--link--hover--typography--text-decoration)"
 					}
 				},
 				":focus" : {
@@ -2550,7 +2279,7 @@
 						"text": "var(--wp--custom--color--foreground)"
 					},
 					"typography": {
-						"textDecoration": "underline"
+						"textDecoration": "var(--wp--custom--paragraph--link--focus--typography--text-decoration)"
 					}
 				}
 			},
@@ -2686,7 +2415,7 @@
 					}
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--large)",
+					"fontSize": "var(--wp--preset--font-size--x-large)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
 				}
 			},

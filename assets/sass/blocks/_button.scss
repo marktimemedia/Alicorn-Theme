@@ -35,14 +35,36 @@
 			@include button-hover-styles;
 		}
 		
+		&.has-text-color {
+			border-color: currentColor;
+		}
+		&:not(.has-text-color) {
+			color: var(--wp--custom--button--outline--color--text);
+
+			&:hover, &:focus {
+				color: var(--wp--custom--color--interactive-hover);
+				--wp--custom--button--border--color: var(--wp--custom--color--interactive-hover);
+			}
+			&:active {
+				color: var(--wp--custom--button--active--color--background);
+				--wp--custom--button--color--background: transparent;
+				--wp--custom--button--border--color: var(--wp--custom--button--active--color--background);
+			}
+		}
 	}
 }
 
-// TODO: I'm not sure what the end goal should be here, but since we are unable to use
-// a button block OUTSIDE of the context of the button collection block (grrrrrrrrr)
-// then there are undesired margins to be dealt with somehow.
 .wp-block-buttons {
 	.wp-block-button:last-child {
 		margin-bottom: 0;
 	}
+}
+
+// other specific items that should behave as a button
+.wp-block-navigation__responsive-container-open, p.wp-block-post-excerpt__more-text .wp-block-post-excerpt__more-link {
+	@include button-main-styles;
+	@include button-hover-styles;
+	@include button-padding-border-styles;
+	text-decoration: none;
+	transition: var(--wp--custom--animation--transition-type) var(--wp--custom--animation--transition-duration);
 }

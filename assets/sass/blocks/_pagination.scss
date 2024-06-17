@@ -1,0 +1,68 @@
+div.wp-block-query-pagination { // This CSS needs to be stronger than Gutenberg's until https://github.com/WordPress/gutenberg/issues/34997 is merged.
+	padding-top: 1.5em;
+	justify-content: space-between;
+	display: grid;
+	grid-template-areas: "prev numbers next";
+	grid-template-columns: 1fr 2fr 1fr;
+
+	@include break-small-only(){
+		grid-template-areas: "prev next";
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.wp-block-query-pagination-previous {
+		justify-self: start;
+		grid-area: prev;
+		margin-right: 10px;
+	}
+
+	.wp-block-query-pagination-next {
+		justify-self: flex-end;
+		grid-area: next;
+		margin-left: 10px;
+	}
+
+	.wp-block-query-pagination-numbers{
+		grid-area: numbers;
+		justify-self: center;
+		margin-right: 10px;
+		margin-left: 10px;
+		.page-numbers {
+			padding: 5px;
+		}
+		.current {
+			text-decoration: underline;
+		}
+		@include break-small-only(){
+			display: none;
+		}
+	}
+}
+
+/** Pagination **/
+.page-numbers, .post-page-numbers {
+	padding: var(--wp--custom--pagination--padding);
+	text-decoration: none !important;
+
+	&:where(:not(.dots)) {
+		background-color: var(--wp--custom--pagination--color--background);
+		color: var(--wp--custom--pagination--color--text);
+		border: var(--wp--custom--pagination--border--width) var(--wp--custom--pagination--border--style) var(--wp--custom--pagination--border--color);
+		border-radius: var(--wp--custom--pagination--border--radius);
+	}	
+
+	&:hover, &:focus {
+		border-color: var(--wp--custom--pagination--hover--border--color);
+	}
+
+	&:not(:last-child) {
+		margin-right: var(--wp--preset--spacing--05) !important;
+	}
+
+	&.current {
+		background-color: var(--wp--custom--pagination--active--color--background);
+		border-color: var(--wp--custom--pagination--active--border--color);
+		color: var(--wp--custom--pagination--active--color--text);
+	}
+	
+}
