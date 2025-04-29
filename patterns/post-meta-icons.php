@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Post Meta With Icons
+ * Title: Post Meta: Icons
  * Slug: alicorn/post-meta-icons
  * Categories: utilities
  * Description: Post author, date, categories, and tags with icons

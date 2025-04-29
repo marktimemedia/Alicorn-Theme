@@ -1,8 +1,16 @@
 <?php
 /**
- * Theme Setup
+ * Functions file.
+ *
+ * Theme constants, settings, and enqueue of necessary theme files.
+ *
+ * @package alicorn
  */
-if ( ! function_exists( 'alicorn_support' ) ) :
+
+/**
+ * Theme supports.
+ */
+if ( ! function_exists( 'alicorn_support' ) ) {
 	/**
 	 * Add Theme Support
 	 */
@@ -12,8 +20,6 @@ if ( ! function_exists( 'alicorn_support' ) ) :
 		if ( ! 'alicorn' === wp_get_theme()->get( 'TextDomain' ) ) {
 			load_theme_textdomain( wp_get_theme()->get( 'TextDomain' ) );
 		}
-		// Alignwide and alignfull classes in the block editor.
-		add_theme_support( 'align-wide' );
 
 		// Add support for responsive embedded content.
 		// See https://github.com/WordPress/gutenberg/issues/26901.
@@ -31,71 +37,56 @@ if ( ! function_exists( 'alicorn_support' ) ) :
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
-		// Add support for core custom logo.
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 200,
-				'width'       => 200,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
-
 		// Don't use core WordPress patterns, only ours.
 		remove_theme_support( 'core-block-patterns' );
-
-		// Enqueue theme css in editor styles.
-		add_editor_style( array( '/style-editor.css' ) );
-
-		add_filter(
-			'block_editor_settings_all',
-			function( $settings ) {
-				$settings['defaultBlockTemplate'] = '<!-- wp:group {"layout":{"inherit":true}} --><div class="wp-block-group"><!-- wp:post-content /--></div><!-- /wp:group -->';
-				return $settings;
-			}
-		);
-
 	}
-endif;
+}
 add_action( 'after_setup_theme', 'alicorn_support', 9 );
 
-
 /**
  *
- * Enqueue child editor scripts and styles.
+ * Enqueue frontend scripts and styles.
  */
-function alicorn_editor_styles() {
-
-	// Add the child theme CSS if it exists.
-	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
-		add_editor_style( '/assets/theme.css' );
-	}
-}
-add_action( 'admin_init', 'alicorn_editor_styles' );
-
-/**
- *
- * Enqueue scripts and styles.
- */
-function alicorn_scripts() {
+function alicorn_enqueue_frontend_scripts() {
+	// Custom theme styles.
+	wp_enqueue_style( 'alicorn-base', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'alicorn-styles', get_template_directory_uri() . '/assets/css/styles.css', array(), alicorn_get_asset_version( get_template_directory() . '/assets/css/styles.css' ) );
+	// Dependencies.
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_style( 'alicorn-styles', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 	// Custom theme scripts.
-	wp_enqueue_script( 'header-resize', get_template_directory_uri() . '/assets/js/build/index.js', '', 1, true );
+	wp_enqueue_script( 'alicorn-editor-scripts', get_template_directory_uri() . '/assets/js/build/index.js', array( 'jquery' ), array(), alicorn_get_asset_version( get_template_directory() . '/assets/js/build/index.js' ), true );
+}
+add_action( 'wp_enqueue_scripts', 'alicorn_enqueue_frontend_scripts' );
 
-	// Add the child theme CSS if it exists.
-	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
-		wp_enqueue_style( 'alicorn-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'alicorn-styles' ), wp_get_theme()->get( 'Version' ) );
+/***
+ * Enqueue frontend styles in the editor.
+ */
+add_editor_style( array( '/assets/css/styles.css' ) );
+
+/***
+ * Enqueue block editor-specific scripts.
+ */
+function alicorn_enqueue_editor_scripts() {
+	wp_enqueue_script( 'alicorn-editor-scripts', get_template_directory_uri() . '/assets/js/editor.js', array( 'wp-blocks' ), array(), alicorn_get_asset_version( get_template_directory() . '/assets/js/editor.js' ), true );
+}
+add_action( 'enqueue_block_editor_assets', 'alicorn_enqueue_editor_scripts' );
+
+/***
+ * Enqueue block editor-specific styles.
+ */
+function alicorn_enqueue_editor_styles() {
+	// If you want to add styles exclusively for the block editor, use is_admin().
+	if ( is_admin() ) {
+		wp_enqueue_style( 'alicorn-editor-styles', get_template_directory_uri() . '/assets/css/editor-styles.css', array(), alicorn_get_asset_version( get_template_directory() . '/assets/css/editor-styles.css' ) );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'alicorn_scripts' );
+add_action( 'enqueue_block_assets', 'alicorn_enqueue_editor_styles' );
 
 /**
  * Include the rest of the theme files
  */
-foreach ( glob( __DIR__ . '/includes/*.php' ) as $alicorn_filename ) {
-	if ( preg_match( '#/includes/_#i', $alicorn_filename ) ) {
+foreach ( glob( __DIR__ . '/inc/*.php' ) as $alicorn_filename ) {
+	if ( preg_match( '#/inc/_#i', $alicorn_filename ) ) {
 		continue; // Ignore files prefixed with an underscore.
 	}
 

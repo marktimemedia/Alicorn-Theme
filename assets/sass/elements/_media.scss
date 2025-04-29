@@ -1,5 +1,5 @@
 img {
-    border: 0;
+    border: 0px solid transparent; // borders should exist but not be visible unless specified in the editor
     height: auto;
     -ms-interpolation-mode: bicubic;
     max-width: 100%;

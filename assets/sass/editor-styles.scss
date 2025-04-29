@@ -1,0 +1,76 @@
+.block-editor-default-block-appender__content {
+	margin-block-start: var(--wp--custom--gap--vertical) !important;
+}
+
+ // these are not loading by default for some reason
+ // this is a duplicate of what exists in theme.json styles typography
+ // if theme.json gets updated, update this as well
+ .wp-block-post-content.block-editor-block-list__layout {
+	font-size:var(--wp--preset--font-size--normal);
+	font-family: var(--wp--custom--body--typography--font-family);
+	font-weight: var(--wp--custom--body--typography--font-weight);
+	line-height: var(--wp--custom--body--typography--line-height);
+  }
+  
+// h1 font sizes are too overzealous
+.editor-post-title.wp-block-post-title {
+	font-size: var(--wp--preset--font-size--large) !important;
+	font-weight: 500;
+}
+
+// details overrides in editor
+.wp-block-details {
+	.block-editor-rich-text__editable {
+	  display: inline-block;
+	  width: 100%;
+	}
+}
+
+// post title container in editor
+.edit-post-visual-editor__post-title-wrapper {
+	border-bottom: 1px solid #ddd;
+	margin-top: 2rem !important;
+	padding-bottom: .5em;
+  
+	h1 {
+	  font-size: var(--wp--preset--font-size--medium);
+	  font-weight: 500;
+	}
+}
+
+// empty featured image selector overflows its container
+.wp-block-post-featured-image {
+	overflow: hidden;
+  
+	&:where(:not([style*='aspect-ratio: auto'])), &:where([style*='height'])  {
+	  
+		// no min-height inside an assigned aspect ratio or with a fixed height
+		.components-placeholder, .wp-block-post-featured-image__placeholder {
+			min-height: 0 !important;
+		}
+	}
+}
+  
+// this color behavior should match what images do by default
+.block-editor-media-placeholder {
+	border-color: transparent;
+}
+
+// Tables
+table {
+	height: auto;
+}
+
+.wp-block-table__cell-content .block-editor-rich-text__editable {
+	height: 100%;
+	vertical-align: var(--wp--custom--table--header--typography--vertical-align);
+}
+
+// ignore these margins within the header and footer of the page
+// duplicates code found in wordpress-custom-styles 
+// editing header and footer template parts in the template part editor does not add "header" and "footer" tags
+.site-footer-container, .site-header-container {
+	.is-layout-flow > *, .is-layout-constrained > * {
+		margin-block: 0;
+	}
+}

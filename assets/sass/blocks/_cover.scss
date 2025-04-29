@@ -1,0 +1,15 @@
+// Cover
+:where(.wp-block-cover-image:not(.has-text-color)), :where(.wp-block-cover:not(.has-text-color)) {
+	color: var(--wp--custom--color--background);
+}
+
+// Cover Hero Patterns
+.alicorn-hero {
+	padding-block: var(--wp--custom--gap--vertical);
+	.alicorn-hero__callout {
+		background-color: var(--wp--custom--color--banner-background);
+		border-radius: var(--wp--custom--tokens--border-radius--banner);
+		color: var(--wp--custom--color--banner-text);
+		padding: var(--wp--custom--tokens--block-spacing--banner) var(--wp--custom--tokens--inline-spacing--banner);
+	}
+}

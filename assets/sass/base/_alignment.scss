@@ -15,18 +15,18 @@
 .aligncenter {
 	text-align: center;
 	display: block;
-	margin-right: auto;
-	margin-left: auto;
+	margin-inline-end: auto;
+	margin-inline-start: auto;
 }
 
 .alignleft {
 	margin-top: 0;
-	margin-right: var(--wp--custom--gap--horizontal) !important;
+	margin-inline-end: var(--wp--custom--gap--horizontal) !important;
 }
 
 .alignright {
 	margin-top: 0;
-	margin-left: var(--wp--custom--gap--horizontal) !important;
+	margin-inline-start: var(--wp--custom--gap--horizontal) !important;
 }
 
 /*
@@ -49,12 +49,13 @@
 .is-root-container .wp-block[data-align='full'] > .wp-block-group,
 .is-root-container .wp-block[data-align='full'] > .wp-block-columns.has-background,
 .is-root-container .wp-block[data-align='full'] > .wp-block-cover {
-	padding-left: var(--wp--custom--gap--horizontal);
-	padding-right: var(--wp--custom--gap--horizontal);
+	padding-inline-start: var(--wp--custom--gap--horizontal);
+	padding-inline-end: var(--wp--custom--gap--horizontal);
 }
 
 .wp-block-group.has-background {
-	padding: var(--wp--custom--gap--horizontal);
+	padding-block: var(--wp--custom--gap--vertical);
+	padding-inline: var(--wp--custom--gap--horizontal);
 }
 
 .wp-site-blocks .alignfull,
@@ -73,16 +74,16 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 /* Blocks inside columns don't have negative margins. */
 .wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
 .is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
-.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.wp-site-blocks .alignfull:where(:not(.wp-block-group)) .alignfull,
 .is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
-	margin-left: auto;
-	margin-right: auto;
+	padding-inline-start: 0;
+	padding-inline-end: 0;
 	width: inherit;
 }
 
 // Alignfull without global padding is inside alignfull with global padding
 // And then things are inside that
 .alignfull.has-global-padding > .alignfull:not(.has-global-padding) > :where([class*="wp-block-"]:not([class*="__"]),p,h1,h2,h3,h4,h5,h6,ul,ol) {
-	padding-left: 0;
-	padding-right: 0;
+	padding-inline-start: 0;
+	padding-inline-end: 0;
 }

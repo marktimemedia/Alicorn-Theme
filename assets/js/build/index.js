@@ -33,12 +33,10 @@ License: GPLv2
   var $lastScrollTop = $(window).scrollTop(); // reset variable any time it reloads
   var $siteHeader = $('.header-sticky'); // your header element
   var changeDirection = -1; // base comparitive variable
-  var shrinkClass = 'header-sticky-small'; // your small header class
+  var shrinkClass = 'header-sticky-scroll'; // your small header class
   var bodyClass = 'sticky-header-enabled'; // your small body class
   var $headerHeight = $siteHeader.height();
   $(window).load(function () {
-    console.log($headerHeight);
-
     // only if this class exists
     if ($siteHeader.length) {
       $('html').addClass(bodyClass);
@@ -58,24 +56,27 @@ License: GPLv2
           }
         } else {
           // this is mobile breakpoint or smaller
-          if ($scrollPosition <= 46) {}
-          if ($scrollPosition > 100 && $scrollPosition > $lastScrollTop) {
-            // once you get far enough down, hide the header
 
+          if ($scrollPosition > 100 && $scrollPosition > $lastScrollTop) {
+            // once you get far enough down, add the shrink class
+
+            console.log('add');
             changeDirection = -1; // reset changeDirection
             $siteHeader.addClass(shrinkClass);
           } else {
             // bring it back up again if we scroll up at all
 
             if (-1 == changeDirection) {
+              console.log('reset');
               changeDirection = $scrollPosition; // only set changeDirection once
             }
 
             if ($scrollPosition < changeDirection - 100) {
               // only add after you've scrolled up a bit
 
+              console.log('remove');
               $siteHeader.removeClass(shrinkClass);
-              changeDirection = -1; // reset changeDirection
+              // changeDirection = -1; // reset changeDirection
             }
           }
 
@@ -84,67 +85,6 @@ License: GPLv2
       });
     }
   });
-})(jQuery);
-
-/***/ }),
-
-/***/ "./assets/js/src/theme/search-toggle.js":
-/*!**********************************************!*\
-  !*** ./assets/js/src/theme/search-toggle.js ***!
-  \**********************************************/
-/***/ (() => {
-
-/*
-Name: Toggle Searchbar
-Author: Marktime Media
-Author URI: http://marktimemedia.com
-Version: 0.1
-License: GPLv2
-
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License version 2,
- as published by the Free Software Foundation.
-
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.See the
- GNU General Public License for more details.
-
- The license for this software can likely be found here:
- http://www.gnu.org/licenses/gpl-2.0.html
-*/
-
-(function ($) {
-  /* Expanding Search Bar */
-
-  function switchToggle() {
-    var bodyWrap = $('.content-body'); // body
-    var searchContainer = $('.search-toggle-container'); // container
-    var searchToggle = $('.search-toggle-trigger'); // trigger button
-    var searchBar = $('.search-toggle-form'); // search form
-    var search = $('.search-toggle-form .wp-block-search__input'); // search input
-    var searchSubmit = $('.search-toggle-form .wp-block-search__button'); // search button
-
-    if (searchToggle.length) {
-      $(document).on('click', '.run-toggle', function () {
-        // if toggle is closed, click button or to open
-        bodyWrap.addClass('search-open');
-        searchToggle.removeClass('run-toggle').addClass('search-open');
-        searchBar.addClass('search-expanded');
-        search.focus().attr('tabindex', 1);
-        searchSubmit.attr('tabindex', 1);
-      });
-      $(document).on('click', '.search-open', function () {
-        // if toggle is open, close by clicking anywhere on the body
-        bodyWrap.removeClass('search-open');
-        searchToggle.addClass('run-toggle').removeClass('search-open');
-        searchBar.removeClass('search-expanded');
-        search.attr('tabindex', -1);
-        searchSubmit.attr('tabindex', -1);
-      });
-    }
-  }
-  switchToggle();
 })(jQuery);
 
 /***/ })
@@ -227,9 +167,6 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _theme_header_resize_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./theme/header-resize.js */ "./assets/js/src/theme/header-resize.js");
 /* harmony import */ var _theme_header_resize_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_theme_header_resize_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _theme_search_toggle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./theme/search-toggle.js */ "./assets/js/src/theme/search-toggle.js");
-/* harmony import */ var _theme_search_toggle_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_theme_search_toggle_js__WEBPACK_IMPORTED_MODULE_1__);
-
 
 })();
 

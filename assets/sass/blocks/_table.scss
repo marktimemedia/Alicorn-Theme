@@ -1,11 +1,11 @@
-/** Tables **/
+// Tables
 .wp-block-table {
 	table {
 		border: var(--wp--custom--table--border--width) var(--wp--custom--table--border--style) var(--wp--custom--table--border--color);
 	}
 	
 	figcaption { // See https://github.com/WordPress/gutenberg/issues/34650
-		color: var(--wp--custom--color--foreground);
+		color: var(--wp--preset--color--foreground);
 		font-size: var(--wp--custom--table--figcaption--typography--font-size);
 		text-align: center;
 	}
@@ -16,9 +16,12 @@
 		border-color: inherit;
 		font-size: var(--wp--custom--table--typography--font-size);
 		font-weight: var(--wp--custom--table--typography--font-weight);
-		text-align: var(--wp--custom--table--typography--text-align);
-		vertical-align: var(--wp--custom--table--typography--vertical-align);
+		hyphens: auto;
+		min-width: var(--wp--custom--table--spacing--cell-min-width);
 		padding: var(--wp--custom--table--spacing--cell-padding);
+		text-align: var(--wp--custom--table--typography--text-align);
+		vertical-align: var(--wp--custom--table--typography--vertical-align);	
+		word-break: break-word;
 	}
 
 	thead {
@@ -51,7 +54,7 @@
 	table[class*=background-color] {
 		thead {
 			th {
-				background-color: rgba(0,0,0,.15);
+				background-color: var(--wp--custom--color--traslucent);
 			}
 		}
 	}
@@ -60,9 +63,82 @@
 .wp-block-table.is-style-stripes {
 	
 	tr:nth-child(odd) {
-		background-color: rgba(0,0,0,.1) !important;
+		background-color: var(--wp--preset--color--translucent-subtle) !important;
 		th {
 			background-color: rgba(0,0,0,.1);
 		}
+	}
+}
+
+.wp-block-table.is-style-alicorn-table-borderless, .wp-block-table.is-style-alicorn-table-invisible {
+	border-width: 0;
+	table {
+		border-width: 0;
+	}
+
+	td, th {
+		border: 0 var(--wp--custom--table--border--style) var(--wp--custom--table--border--color);
+		border-bottom-width: var(--wp--custom--table--border--width);
+	}
+
+	thead {
+		border-width: inherit;
+		th {
+			background-color: transparent;
+			border: 0 var(--wp--custom--table--header--border--style) var(--wp--custom--table--header--border--color);
+			border-bottom-width: var(--wp--custom--table--header--border--width);
+		}
+	}
+
+	table[style*=border-width] {
+		border-top-width: 0 !important;
+		border-left-width: 0 !important;
+		border-right-width: 0 !important;
+	}
+	
+}
+
+.wp-block-table.is-style-alicorn-table-invisible {
+	border-width: 0;
+	table {
+		border-width: 0;
+	}
+
+	td, th {
+		border: 0 var(--wp--custom--table--border--style) var(--wp--custom--table--border--color);
+	}
+
+	thead {
+		border-width: inherit;
+		th {
+			background-color: transparent;
+			border: 0 var(--wp--custom--table--header--border--style) var(--wp--custom--table--header--border--color);
+		}
+	}	
+}
+
+.wp-block-table.is-style-alicorn-table-borderless {
+
+	td, th {
+		border-bottom-width: var(--wp--custom--table--border--width);
+	}
+
+	thead {
+		th {
+			border-bottom-width: var(--wp--custom--table--header--border--width);
+		}
+	}
+
+	table[style*=border-width] {
+		border-top-width: 0 !important;
+		border-left-width: 0 !important;
+		border-right-width: 0 !important;
+	}
+	
+}
+
+.wp-block-table.is-style-alicorn-table-invisible {
+	table[style*=border-width] {
+		border-width: 0 !important;
 	}
 }

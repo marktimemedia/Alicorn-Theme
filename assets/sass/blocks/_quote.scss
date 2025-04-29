@@ -1,32 +1,27 @@
-/** Quote **/
+// Quote
 .wp-block-quote {
 	// this is redundant in theme.json but the WP core values are overriding theme.json
 	border-color: var(--wp--custom--quote--border--color);
 	border-width: var(--wp--custom--quote--border--width);
 	padding-left: var(--wp--custom--quote--spacing--padding--left);
 	margin-block-end: var(--wp--custom--gap--vertical);
-	p {
-		font-style: unset;
-		margin-top: 0px;
-	}
-	.wp-block-quote__citation, // For the editor
-	cite {
-		//See https://github.com/WordPress/gutenberg/issues/35735
-		font-size: var(--wp--custom--quote--citation--typography--font-size);
-		font-style: var(--wp--custom--quote--citation--typography--font-style);
-		font-weight: var(--wp--custom--quote--citation--typography--font-weight);
-	}
-	
+
 	&.is-style-plain {
 		border: 0;
 		padding: 0;
 	}
+
+	cite {
+		font-size: var(--wp--custom--quote--citation--typography--font-size);
+		font-style: var(--wp--custom--pullquote--citation--typography--font-style);
+		font-weight: var(--wp--custom--pullquote--citation--typography--font-weight);
+	}
 }
 
-/** Pullquote **/
+// Pullquote
 .wp-block-pullquote.is-style-solid-color,
 .wp-block-pullquote {
-	text-align: var(--wp--custom--pullquote--typography--text-align); // See https://github.com/WordPress/gutenberg/pull/31996
+	text-align: var(--wp--custom--pullquote--typography--text-align);
 	blockquote {
 		padding: 0;
 		margin: 0;
@@ -40,7 +35,7 @@
 		.wp-block-pullquote__citation, // For the editor
 		cite {
 			display: block;
-			//See https://github.com/WordPress/gutenberg/issues/35735
+			font-family: var(--wp--custom--pullquote--citation--typography--font-family);
 			font-size: var(--wp--custom--pullquote--citation--typography--font-size);
 			font-style: var(--wp--custom--pullquote--citation--typography--font-style);
 			font-weight: var(--wp--custom--pullquote--citation--typography--font-weight);

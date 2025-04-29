@@ -1,9 +1,9 @@
 div.wp-block-query-pagination { // This CSS needs to be stronger than Gutenberg's until https://github.com/WordPress/gutenberg/issues/34997 is merged.
-	padding-top: 1.5em;
-	justify-content: space-between;
 	display: grid;
 	grid-template-areas: "prev numbers next";
 	grid-template-columns: 1fr 2fr 1fr;
+	justify-content: space-between;
+	padding-top: 1.5em;
 
 	@include break-small-only(){
 		grid-template-areas: "prev next";
@@ -41,14 +41,18 @@ div.wp-block-query-pagination { // This CSS needs to be stronger than Gutenberg'
 
 /** Pagination **/
 .page-numbers, .post-page-numbers {
+	display: inline-block;
+	min-height: 2.6em;
+	min-width: 2.6em;
 	padding: var(--wp--custom--pagination--padding);
+	text-align: center;
 	text-decoration: none !important;
 
 	&:where(:not(.dots)) {
 		background-color: var(--wp--custom--pagination--color--background);
-		color: var(--wp--custom--pagination--color--text);
 		border: var(--wp--custom--pagination--border--width) var(--wp--custom--pagination--border--style) var(--wp--custom--pagination--border--color);
 		border-radius: var(--wp--custom--pagination--border--radius);
+		color: var(--wp--custom--pagination--color--text);
 	}	
 
 	&:hover, &:focus {
@@ -64,5 +68,4 @@ div.wp-block-query-pagination { // This CSS needs to be stronger than Gutenberg'
 		border-color: var(--wp--custom--pagination--active--border--color);
 		color: var(--wp--custom--pagination--active--color--text);
 	}
-	
 }

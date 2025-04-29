@@ -1,0 +1,69 @@
+/** Details Block **/
+.wp-block-details, details {
+	background-color: var(--wp--preset--color--base-minus-4);
+	color: var(--wp--preset--color--foreground);
+	margin-bottom: var(--wp--custom--gap--baseline);
+	overflow: visible;
+  
+	summary {
+	  cursor: pointer;
+	  font-weight: 700;
+	  margin: 0;
+	  padding: 1rem 3.5rem 1rem 1.25rem;
+	  position: relative;
+	}
+  
+	p {
+	  background-color: var(--wp--preset--color--background);
+	  color: var(--wp--preset--color--foreground);
+	  margin: 0px !important;
+	  padding: 1.5rem 1.25rem 0em 1.25em;
+  
+	  &.has-background {
+		background-color: transparent;
+	  }
+	}
+  
+	summary::marker {
+	  content: none;
+	}
+  
+	p:last-child {
+	  padding-bottom: 1.5rem;
+	}
+  
+	summary::after {
+	  content: '';
+	  position: absolute;
+	  height: 1.5em;
+	  width: 1.5em;
+	  right: 1.25em;
+	  background: 0 0;
+	  background-color: currentColor;
+	  -webkit-mask-image: url('../svg/add.svg'), linear-gradient(transparent, transparent);
+	  mask-image: url('../svg/add.svg'), linear-gradient(transparent, transparent);
+	  -webkit-mask-position: center center;
+	  mask-position: center center;
+	  -webkit-mask-repeat: no-repeat;
+	  mask-repeat: no-repeat;
+	  top: 50%;
+	  transform: translateY(-50%);
+	}
+  
+	&[open] summary::after {
+	  -webkit-mask-image: url('../svg/remove.svg'), linear-gradient(transparent, transparent);
+	  mask-image: url('../svg/remove.svg'), linear-gradient(transparent, transparent);
+	}
+  
+	summary:hover {
+	  filter:brightness(0.8);
+	}
+	summary:focus {
+	  outline: .25rem solid var(--wp--custom--color--focus);
+	  outline-offset: 0;
+	}
+  
+	&.has-background summary:hover {
+	  background: inherit;
+	}
+  }

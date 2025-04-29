@@ -3,14 +3,18 @@
 	@include break-small() {
 		--wpadmin-bar--height: 32px;
 	}
-}
 
-.wp-site-blocks {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	padding: 0;
-	position: relative;
+	// Override core block settings
+	:where(.is-layout-flow) > *, :where(.is-layout-constrained) > * {
+
+		& > :first-child:first-child {
+			margin-block-start: 0;
+		}
+
+		& > :last-child:last-child {
+			margin-block-end: 0;
+		}	
+	}
 }
 
 body.admin-bar {
@@ -22,9 +26,9 @@ body.admin-bar {
 }
 
 // Override core block settings
-:where(body .is-layout-flow) > *, :where(body .is-layout-constrained) > * {
-	margin-block-start: var(--wp--custom--gap--vertical);
-	margin-block-end: var(--wp--custom--gap--vertical);
+// needs to be oddly specific to match core gap and spacing settings
+:where(.is-layout-flow) > *, :where(.is-layout-constrained) > * {
+	margin-block-end: none;
 
 	& > :first-child:first-child {
 		margin-block-start: 0;
@@ -32,11 +36,11 @@ body.admin-bar {
 
 	& > :last-child:last-child {
 		margin-block-end: 0;
-	}	
+	}
 }
 
 // ignore these margins within the header and footer of the page
-header.wp-block-template-part, footer.wp-block-template-part {
+header.wp-block-template-part, .site-header, footer.wp-block-template-part, .site-footer {
 	.is-layout-flow > *, .is-layout-constrained > * {
 		margin-block-start: 0;
 		margin-block-end: 0;
@@ -47,9 +51,6 @@ header.wp-block-template-part, footer.wp-block-template-part {
 	position: relative;
 }
 
-.site-footer-container {
-	margin-top: auto;
-}
 
 .sticky-header-enabled {
 	#wpadminbar {

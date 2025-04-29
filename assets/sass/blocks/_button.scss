@@ -1,21 +1,6 @@
 @import '../base/mixins';
-/**
- * Button
- * Needs to account for editor style and not overreach
- */
- button:where(:not([role='presentation']):not(.components-button):not([class*="navigation"])), input[type="submit"] {
- 	@include button-main-styles;
- 	@include button-hover-styles;
- }
 
- a.button {
-	text-decoration: none;
-	@include button-main-styles;
- 	@include button-hover-styles;
- }
-/**
- * Block Options
- */
+// Buttons
  .wp-block-button {
 	.wp-block-button__link {
 		@include button-hover-styles;
@@ -28,9 +13,9 @@
 			--wp--custom--button--color--text: var(--wp--custom--button--outline--color--text);
 			--wp--custom--button--color--background: transparent;
 			--wp--custom--button--border--color: var(--wp--custom--button--outline--border--color);
-			--wp--custom--button--hover--color--background: var(--wp--custom--color--background);
-			--wp--custom--button--hover--color--text: var(--wp--custom--color--foreground);
-			--wp--custom--button--hover--border--color: var(--wp--custom--color--foreground);
+			--wp--custom--button--hover--color--background: var(--wp--preset--color--background);
+			--wp--custom--button--hover--color--text: var(--wp--preset--color--foreground);
+			--wp--custom--button--hover--border--color: var(--wp--preset--color--foreground);
 			@include button-main-styles;
 			@include button-hover-styles;
 		}
@@ -55,6 +40,7 @@
 }
 
 .wp-block-buttons {
+	gap: var(--wp--preset--spacing--10);
 	.wp-block-button:last-child {
 		margin-bottom: 0;
 	}
@@ -67,4 +53,28 @@
 	@include button-padding-border-styles;
 	text-decoration: none;
 	transition: var(--wp--custom--animation--transition-type) var(--wp--custom--animation--transition-duration);
+}
+
+// Button Customn Styles
+.is-style-button-secondary, button.secondary, .button.secondary {
+	//change the color variables
+	--wp--custom--button--color--background: var(--wp--preset--color--secondary);
+	--wp--custom--button--border--color: var(--wp--preset--color--secondary);
+	--wp--custom--button--hover--color--background: var(--wp--preset--color--secondary-dark);
+	--wp--custom--button--hover--border--color: var(--wp--preset--color--secondary-dark);
+	--wp--custom--button--active--color--background: var(--wp--preset--color--secondary-shade);
+	--wp--custom--button--active--border--color: var(--wp--preset--color--secondary-shade);
+}
+
+.is-style-button-reverse, button.reverse, .button.reverse {
+	//change the color variables
+	--wp--custom--button--color--text: var(--wp--preset--color--primary-dark);
+	--wp--custom--button--color--background: var(--wp--preset--color--white);
+	--wp--custom--button--border--color: var(--wp--preset--color--white);
+	--wp--custom--button--hover--color--text: var(--wp--preset--color--primary-dark);
+	--wp--custom--button--hover--color--background: var(--wp--preset--color--primary-subtle);
+	--wp--custom--button--hover--border--color: var(--wp--preset--color--primary-subtle);
+	--wp--custom--button--active--color--text: var(--wp--preset--color--primary-shade);
+	--wp--custom--button--active--color--background: var(--wp--preset--color--primary-subtle);
+	--wp--custom--button--active--border--color: var(--wp--preset--color--primary-subtle);
 }

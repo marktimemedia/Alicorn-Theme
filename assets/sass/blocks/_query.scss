@@ -25,3 +25,23 @@
        
     }
  }
+
+ .alicorn-card {
+   border: var(--wp--custom--tokens--border-width--card) solid var(--wp--custom--color--card-border);
+   border-radius: var(--wp--custom--tokens--border-radius--card);
+   overflow: hidden;
+   padding: var(--wp--custom--tokens--block-spacing--card) var(--wp--custom--tokens--inline-spacing--card);
+
+   .wp-block-post-featured-image {
+      margin-block-start: calc(-1 * var(--wp--custom--tokens--block-spacing--card));
+      margin-inline-end: calc(-1 * var(--wp--custom--tokens--inline-spacing--card)) !important;
+      margin-inline-start: calc(-1 * var(--wp--custom--tokens--inline-spacing--card)) !important;
+      width: calc(100% + (2 * var(--wp--custom--tokens--inline-spacing--card)));
+   }
+ }
+
+ .alicorn-list {
+   .wp-block-post-featured-image {
+      border-radius: var(--wp--custom--tokens--border-radius--card);
+   }
+ }

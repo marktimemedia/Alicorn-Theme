@@ -1,32 +1,39 @@
 /** Navigation **/
 // See https://github.com/WordPress/gutenberg/issues/39052
 .wp-block-navigation {
+	gap: 0;
 
 	.wp-block-navigation-container, .wp-block-page-list {
+		gap: 0;
 		&:where(:not(.has-text-color)) {
 			.wp-block-navigation-item {
-				color: var(--wp--custom--color--foreground);
+				color: var(--wp--preset--color--foreground);
 			}
-		}
-
-		@include break-small-only() {
-			// override wordpress default
-			gap: 0;
 		}
 	}
 
 	// all navigation items on the whole page
 	.wp-block-navigation-item {
-		padding: var(--wp--custom--navigation--item--padding);
+		padding: 0;
 		
 		.wp-block-navigation-item__content {
-			text-decoration: underline;
+			padding: var(--wp--custom--navigation--item--padding-block) var(--wp--custom--navigation--item--padding-inline);
+			position: relative;
+			text-decoration: none;
+			z-index: 1;
+
+			.wp-block-navigation-item__label {
+				color: currentColor;
+				display: inline-block;
+				padding: var(--wp--custom--navigation--link--padding-block) var(--wp--custom--navigation--link--padding-inline);
+				text-decoration: inherit;
+			}
 		}
 
 		&:hover, &:focus {
 			
 			& > .wp-block-navigation-item__content {
-				text-decoration: none;
+				text-decoration: underline;
 			}
 		}
 		
@@ -34,13 +41,14 @@
 		// placement of ancestor class is inconsistent based on type of menu
 		&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor) {
 			& > .wp-block-navigation-item__content {
-				font-weight: var(--theme--type--weight--bold);
+				font-weight: 600;
 				text-decoration: var(--wp--custom--navigation--current--text-decoration);
 			}
 		}
 
 		.wp-block-navigation__submenu-icon {
 			background-color: transparent;
+			margin-right: 0 !important;
 	
 			svg {
 				stroke: currentColor;
@@ -49,20 +57,26 @@
 
 	}
 
-	// Primary Menu Area In Header
-	.site-header & {
+	// Main Menu
+	.site-header__main & {
 		.wp-block-navigation-item {
 			.wp-block-navigation-item__content {
-				border-bottom: var(--wp--custom--navigation--hover--border--width) var(--wp--custom--navigation--hover--border--style) transparent;	
+				font-weight: var(--wp--custom--tokens--font-weight--navigation);
 				text-decoration: var(--wp--custom--navigation--item--text-decoration);
-				padding: var(--wp--custom--navigation--link--padding);
+
+				.wp-block-navigation-item__label {
+					border-bottom: var(--wp--custom--navigation--hover--border--width) var(--wp--custom--navigation--hover--border--style) transparent;	
+				}
 			}
 
 			&:hover, &:focus {
 				
 				& > .wp-block-navigation-item__content {
-					border-color: var(--wp--custom--navigation--hover--border--color);
 					text-decoration: var(--wp--custom--navigation--hover--text-decoration);
+
+					.wp-block-navigation-item__label {
+						border-color: var(--wp--custom--navigation--hover--border--color);
+					}
 				}
 			}
 			
@@ -71,260 +85,170 @@
 			&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor) {
 				& > .wp-block-navigation-item__content {
 					background-color: var(--wp--custom--navigation--current--color--background);
-					border-color: var(--wp--custom--navigation--current--border--color);
+
+					.wp-block-navigation-item__label {
+						border-color: var(--wp--custom--navigation--current--border--color);
+						font-weight: 700;
+					}
 				}
 			}
 		}
 	}
 
-	// has a submenu
-	.wp-block-navigation-item.has-child {
-		transition: all 0.3s;
-		color: currentColor;
-
-		// any nested menu items within the submenu
-		.wp-block-navigation-item {
-			width: 100%;
-			
-			.wp-block-navigation-item__content {
-				border-bottom-width: 0;
-			}
-
-		}
-
-		// toggle behavior
-		.wp-block-navigation__submenu-icon svg {
-			transform: rotateZ(-90deg);
-			transition: all 0.5s;
-		}
-
-		&:hover > .wp-block-navigation-submenu__toggle svg {
-			transform: rotateZ(0deg);
-		}
-		// the first is for on-hover where the svg is contained, the second is for on-click where the svg is adjacent
-		.wp-block-navigation-submenu__toggle[aria-expanded=true] .wp-block-navigation__submenu-icon svg, 
-		.wp-block-navigation-submenu__toggle[aria-expanded=true] + .wp-block-navigation__submenu-icon svg {
-			transform: rotateZ(0deg);
+	// has a submenu, is not vertical
+	&:where(:not(.is-vertical)) {
+		.wp-block-navigation-item.has-child {
+			transition: all 0.3s;
 			color: currentColor;
-		}
 
-		// only on desktop, set the colors of the submenu container if none are selected
-		@include break-small() {
-			.wp-block-navigation__submenu-container {
-				left: 0;
+			// any nested menu items within the submenu
+			.wp-block-navigation-item {
+				width: 100%;
+				
+				.wp-block-navigation-item__content {		
 
-				&:not(.has-background) {
-					.wp-block-navigation-item {
-						background-color: var(--wp--custom--navigation--submenu--color--background);
+					.wp-block-navigation-item__label {
+						border-bottom-width: 0;
 					}
 				}
-		
-				&:not(.has-text-color) {
-					.wp-block-navigation-item {
-						color: var(--wp--custom--navigation--submenu--color--text);
-					}
-				}
+
 			}
 
-			// align the last one right if we think it is on the right
-			*:where(.is-content-justification-right, .is-content-justification-space-between) & {
-				&:last-of-type {
-					.wp-block-navigation__submenu-container {
-						left: auto;
-						right: 0;
-					}
-				}
+			// toggle behavior
+			.wp-block-navigation__submenu-icon svg {
+				transform: rotateZ(-90deg);
+				transition: all 0.5s;
 			}
-		}
 
-		// will open on hover or click (basic link)
-		&.open-on-hover-click {
+			&:hover > .wp-block-navigation-submenu__toggle svg {
+				transform: rotateZ(0deg);
+			}
+			// the first is for on-hover where the svg is contained, the second is for on-click where the svg is adjacent
+			.wp-block-navigation-submenu__toggle[aria-expanded=true] .wp-block-navigation__submenu-icon svg, 
+			.wp-block-navigation-submenu__toggle[aria-expanded=true] + .wp-block-navigation__submenu-icon svg {
+				transform: rotateZ(0deg);
+				color: currentColor;
+			}
 
-			// only on desktop
+			// only on desktop, set the colors of the submenu container if none are selected
 			@include break-small() {
+				.wp-block-navigation__submenu-container {
+					left: 0;
 
-				&:hover, &:focus {
-					background-color: var(--wp--custom--navigation--submenu--color--background);
-
-					& > .wp-block-navigation-item__content {
-						color: var(--wp--custom--navigation--submenu--color--text);
+					&:not(.has-background) {
+						.wp-block-navigation-item {
+							background-color: var(--wp--custom--navigation--submenu--color--background);
+						}
 					}
-		
-					.wp-block-navigation__submenu-icon svg {
-						stroke: var(--wp--custom--navigation--submenu--color--text);
+			
+					&:not(.has-text-color) {
+						.wp-block-navigation-item {
+							color: var(--wp--custom--navigation--submenu--color--text);
+						}
 					}
-				}	
+				}
+				
+				// align the last one right if we think it is on the right
+				*:where(.is-content-justification-right, .is-content-justification-space-between) & {
+					&:last-of-type {
+						.wp-block-navigation__submenu-container {
+							left: auto;
+							right: -.25em; // it doesn't actually align, this might have to do with negative margins
+						}
+					}
+				}
+			}
 
-				// nested within the submenu
-				.open-on-hover-click {
-		
+			// will open on hover or click (basic link)
+			&.open-on-hover-click {
+
+				// only on desktop
+				@include break-small() {
+
 					&:hover, &:focus {
-	
+						background-color: var(--wp--custom--navigation--submenu--color--background);
+
 						& > .wp-block-navigation-item__content {
-							color: currentColor;
+							color: var(--wp--custom--navigation--submenu--color--text);
 						}
 			
 						.wp-block-navigation__submenu-icon svg {
-							stroke: currentColor;
+							stroke: var(--wp--custom--navigation--submenu--color--text);
 						}
 					}	
-				}
-			}
-		}
+
+					// nested within the submenu
+					.open-on-hover-click {
 			
-
-		// will only open on click (button)
-		&.open-on-click {
-			// override padding on the list item and move it down into the button
-			padding: 0; 
-
-			& > .wp-block-navigation-item__content {
-				border: 0; // override border on the button and move it down into the span
-				padding-inline-end: var(--wp--preset--spacing--20);
-
-				span {
-					display: inline-block; // to be able to add padding
-				}	
-			
-				// only on desktop
-				@include break-small() {
-					&[aria-expanded="true"] {
-						background-color: var(--wp--custom--navigation--submenu--color--background);
-						color: var(--wp--custom--color--background);
-
-						& + .wp-block-navigation__submenu-icon svg {
-							color: var(--wp--custom--color--background);
-						}
-					}
-	
-				}
-				
-			}
-			// move these styles down into the button also
-			&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor){
-				& > .wp-block-navigation-item__content span {
-					background-color: var(--wp--custom--navigation--current--color--background);
-					text-decoration: var(--wp--custom--navigation--current--text-decoration);
-				}
-			}
-
-			.wp-block-navigation__submenu-icon {
-				color: currentColor;
-			}
-		}	
+						&:hover, &:focus {
 		
-		// open on click in Header
-		.site-header & {
-			&.open-on-click {
-				// override padding on the list item and move it down into the button
-				padding: 0; 
-
-				& > .wp-block-navigation-item__content {
-					padding: var(--wp--custom--navigation--item--padding);
-
-					span {
-						border-bottom: var(--wp--custom--navigation--hover--border--width) var(--wp--custom--navigation--hover--border--style) transparent;
-						padding: var(--wp--custom--navigation--link--padding);
-					}	
-					
-				}
-
-				// move these styles down into the button also
-				&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor){
-					& > .wp-block-navigation-item__content span {
-						border-color: var(--wp--custom--navigation--current--border--color);
+							& > .wp-block-navigation-item__content {
+								color: currentColor;
+							}
+				
+							.wp-block-navigation__submenu-icon svg {
+								stroke: currentColor;
+							}
+						}	
 					}
 				}
 			}
-		}		
-	
-		// See https://github.com/WordPress/gutenberg/issues/34648
-		.wp-block-navigation__submenu-container {
-			border: var(--wp--custom--navigation--submenu--border--width) var(--wp--custom--navigation--submenu--border--style) var(--wp--custom--navigation--submenu--border--color);
-			width: auto;
-
-			.wp-block-navigation-item {
-				display: block;
-				position: relative;
-
-				&:hover, &:focus {
-					& > .wp-block-navigation-item__content {
-						text-decoration: var(--wp--custom--navigation--submenu--text-decoration);
-					}
-				}
-			}
-
-			.wp-block-navigation-item__content {
-				display: inline-block;	
-				width: 100%;
-			}
-
-			// parent of a nested submenu container
-			.wp-block-navigation-item.has-child {
-
-				& > .wp-block-navigation-item__content {
-					// do not include a border on nested submenus
-					border: 0;
-					// to account for the arrow next to the button
-					width: calc(100% - 10px);
-				}
-
-				&.open-on-hover-click {
-					// this allows the sub-submenus to align properly by moving all padding to the content
-					padding: 0;
-
-					& > .wp-block-navigation-item__content {
-						// if you alter navigation padding in theme.json, alter this to match
-						padding: var(--wp--preset--spacing--10);
-					}
-
-					.wp-block-navigation__submenu-icon {
-						// make this match the icon styling of on-click
-						margin: 0;
-					}
-				}
-
-				&.open-on-click {
-					& > .wp-block-navigation-item__content {
-						span {							
-							border-bottom-width: 0;
-						}
-					}
-
-					// do not adopt the same current-menu-item behaviors of the main nav
-					&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor) {
-						& > .wp-block-navigation-item__content span {
-							border: 0;
-							text-decoration: none;
-						}
-					}
-				}				
-			}
-
-			// nested submenu
+		
+			// See https://github.com/WordPress/gutenberg/issues/34648
 			.wp-block-navigation__submenu-container {
-				background-color: inherit; // keep the background color from the main submenu
-				border: 0; // do not inherit the borders from the main submenu
-				position: relative;
-				right: auto !important;
-				left: 0;
+				border: var(--wp--custom--navigation--submenu--border--width) var(--wp--custom--navigation--submenu--border--style) var(--wp--custom--navigation--submenu--border--color);
+				width: auto;
+
+				.wp-block-navigation-item {
+					display: block;
+					position: relative;
+
+					&:hover, &:focus {
+						& > .wp-block-navigation-item__content {
+							text-decoration: var(--wp--custom--navigation--submenu--text-decoration);
+						}
+					}
+				}
 
 				.wp-block-navigation-item__content {
-					color: currentColor;
+					display: inline-block;	
+					width: 100%;
 				}
 
-				@include break-small {
-					.wp-block-navigation-item {
-						background-color: rgba(0,0,0,.2) !important;
+				// parent of a nested submenu container
+				.wp-block-navigation-item.has-child {
+
+					& > .wp-block-navigation-item__content {
+						
+						// to account for the arrow next to the button
+						width: calc(100% - 14px);
+
+						.wp-block-navigation-item__label {
+							// do not include a border on nested submenus
+							border: 0;
+						}
+					}				
+				}
+
+				// nested submenu
+				.wp-block-navigation__submenu-container {
+					background-color: inherit; // keep the background color from the main submenu
+					border: 0; // do not inherit the borders from the main submenu
+					position: relative;
+					right: auto !important;
+					left: 0;
+
+					.wp-block-navigation-item__content {
+						color: currentColor;
+					}
+
+					@include break-small {
+						.wp-block-navigation-item {
+							background-color: rgba(0,0,0,.2) !important;
+						}
 					}
 				}
 			}
-		}
-	}
-
-	&.is-vertical {
-		.wp-block-navigation__container {
-			gap: 5px;
 		}
 	}
 
@@ -356,7 +280,10 @@
 				.wp-block-navigation__submenu-container {			
 					padding: 0 !important; // override WP defaults
 					width: 100%;
-					
+
+					@include break-small-only() {
+						min-width: 0 !important;
+					}
 				}
 			}
 		}
@@ -369,62 +296,50 @@
 		&.is-menu-open {
 			// default backgrounds, text colors, and settings
 			&:not(.has-background) {
-				background-color: var(--wp--custom--color--background);
-				color: var(--wp--custom--color--foreground);
+				background-color: var(--wp--preset--color--background);
+				color: var(--wp--preset--color--foreground);
 				padding-inline-start: var(--wp--custom--gap--horizontal);
 				padding-inline-end: var(--wp--custom--gap--horizontal);
 			}
 			&:not(.has-text-color) {
 				.wp-block-navigation-item__content {
-					color: var(--wp--custom--color--foreground);
+					color: var(--wp--preset--color--foreground);
 				}
 			}
 		}
 
-		// only on mobile
 		@include break-small-only() {
+			display: flex;
 			font-size: var(--wp--preset--font-size--emphasis);
+			left: 100%;
+			overflow-x: hidden;
+			transition: left 0s;
 
 			.wp-block-navigation {
 				font-size: var(--wp--preset--font-size--emphasis);
 				gap: 0;
 			}	
 
-			.wp-block-navigation__submenu-container {
-				font-size: var(--wp--preset--font-size--normal);
+			.wp-block-navigation__submenu-icon {
+				display: none;
 			}
-
-			// override default WP styles so the padding doesn't change
 			&.is-menu-open {
+				width: 100%;
+				left: 0%;
+				right: 0;
+				transition: all 0s;
+				transition: left 0.3s;
+
 				.wp-block-navigation {
 					gap: 0;
-				}	
-
-				.wp-block-navigation-item:where(:not(.open-on-click)) {
-					padding: var(--wp--custom--navigation--item--padding);
-
-					.wp-block-navigation-item__content {
-						padding: var(--wp--custom--navigation--link--padding);
-					}
 				}
 
+				.wp-block-navigation__submenu-container {
+					background: transparent;
+				}
+				
 				// Keep the menu toggle behavior on mobile
 				.wp-block-navigation__responsive-container-content {
-					// make mobile menu alignment left, even if they're supposed to be aligned right on desktop
-					.wp-block-navigation__container{
-						width: 100%;
-						&.items-justified-right {
-							align-items: flex-start !important;
-
-							.wp-block-navigation-item {
-								align-items: flex-start !important;
-							}
-						}
-					}
-					.wp-block-navigation-item {
-						display: block;
-						width: 100%;
-					}
 					.has-child {
 						.wp-block-navigation__submenu-container {
 							height: 0;
@@ -451,37 +366,41 @@
 					}
 
 				}
-				
 			}
 
-			.wp-block-navigation__container, .wp-block-page-list {
+			.wp-block-navigation__container, .wp-block-page-list {	
 				min-width: none;
 				width: 100%;	
 			}
 
 			.wp-block-navigation-item {
-				padding: 0 !important; // overriding the defaults we just set above
+				border-top: 1px solid var(--wp--preset--color--translucent) !important;
+				padding: 0 !important; // overriding the defaults we just set above for USWDS use case
 				width: 100%;
 
 				& > .wp-block-navigation-item__content {
-					border-bottom: 0;
-					border-left-color: transparent;
-					border-left-width: 3px !important;
-					border-left-style: solid !important;
-					// if you alter navigation padding in theme.json, alter this to match
-					padding-inline-start: var(--wp--preset--spacing--10) !important;
 					width: 100%;
 
-					// move these styles back up into the main content for consistenct in mobile
-					span {
-						border: 0 !important;
-						padding-inline-start: 0 !important;
-					}	
+					.wp-block-navigation-item__label {
+						border-bottom: 0;
+						border-left-color: transparent;
+						border-left-width: 3px !important;
+						border-left-style: solid !important;
+						padding-inline-start: var(--wp--custom--navigation--item--padding-inline) !important;
+					}
+
+					&:hover, &:focus {
+						// override WordPress default styles
+						background-color: rgba(0,0,0,.1);	
+					}
+
 				}
 
 				&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor) {
 					& > .wp-block-navigation-item__content{
-						border-left-color: var(--wp--custom--navigation--current--border--color);
+						.wp-block-navigation-item__label {
+							border-left-color: var(--wp--custom--navigation--current--border--color);
+						}
 					}
 
 					&:not(.has-text-color) {
@@ -493,22 +412,26 @@
 
 				&:hover, &:focus {
 					// override WordPress default styles
-					& > .wp-block-navigation-item__content {
-						background-color: rgba(0,0,0,.1);
-					}	
+					background: transparent;	
 				}
 
 				// nested menu items
 				.wp-block-navigation-item {
 					
 					& > .wp-block-navigation-item__content{
-						padding-inline-start: var(--wp--preset--spacing--50) !important;
-						border-left: 0 !important;
+
+						.wp-block-navigation-item__label {
+							padding-inline-start: calc(2.5 * var(--wp--custom--navigation--item--padding-inline)) !important;
+							border-left: 0 !important;
+						}
 					}	
 
 					.wp-block-navigation-item {
 						& > .wp-block-navigation-item__content{
-							padding-inline-start: var(--wp--preset--spacing--60) !important;
+							
+							.wp-block-navigation-item__label {
+								padding-inline-start: calc(3 * var(--wp--custom--navigation--item--padding-inline)) !important;
+							}
 						}	
 					}
 
@@ -521,16 +444,7 @@
 				top: .75em;
 			}
 		}
-	}
 
-	// other elements inside navigation
-	.wp-block-search {
-		.wp-block-search__button {
-			padding: .25em .5em;
-		}
-		@include break-small-only() {
-			width: 100%;
-		}
 	}
 
 	.wp-block-buttons {
@@ -538,6 +452,252 @@
 		.wp-block-button, .wp-block-button__link {
 			@include break-small-only() {
 				width: 100%;
+			}
+		}
+	}
+
+	// vertical navigation in general
+	&.is-vertical {
+		.wp-block-navigation__container {
+			width: 100%;
+			gap: 0;
+		}
+
+		.wp-block-navigation-item {
+			border: 0;
+			padding: 0 !important; // overriding the defaults we just set above for USWDS use case
+			width: 100%;
+
+			&:not(.has-text-color) {
+				& > .wp-block-navigation-item__content{
+					color: var(--wp--preset--color--foreground);
+
+					&:hover, &:focus {
+						color: var(--wp--custom--color--interactive);
+					}
+				}
+			}
+
+			& > .wp-block-navigation-item__content {
+				border-bottom: 0;
+				padding: var(--wp--preset--spacing--05) 0;
+				text-decoration: none;
+				width: 100%;
+
+				.wp-block-navigation-item__label {
+					border-bottom: 0;
+					padding: 0;
+				}
+
+				&:hover, &:focus {
+					text-decoration: underline;
+				}	
+			}
+
+			&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor) {
+
+				&:not(.has-text-color) {
+					& > .wp-block-navigation-item__content{
+						color: var(--wp--preset--color--foreground);
+					}
+				}					
+			}
+
+			&:hover, &:focus {
+				background-color: transparent;
+				color: var(--wp--preset--color--foreground);	
+			}
+
+			// li item which has a submenu
+			&.wp-block-navigation-submenu {
+				border: 0;
+				background-color: transparent;
+				color: var(--wp--custom--color--primary-dark);	
+			}
+
+			// always show submenus
+			&.has-child {
+				display: block;
+				.wp-block-navigation__submenu-container {
+					background-color: transparent;
+					border: 0 !important;
+					height: auto !important;
+					left: auto !important;
+					opacity: 1 !important;
+					position: relative !important;
+					top: auto !important;
+					visibility: visible !important;
+					width: 100%;
+
+					.wp-block-navigation-item__content {
+						padding: var(--wp--preset--spacing--05) 0;
+					}
+				}
+			}
+
+			.wp-block-navigation__submenu-icon {
+				display: none !important;
+			}
+			
+		}
+	}
+}
+
+// Vertical Navigation that is not in the footer
+div:not(.site-footer__nav) > .wp-block-navigation.is-vertical {
+
+	.wp-block-navigation-item {
+		border-top: 1px solid var(--wp--preset--color--translucent) !important;
+
+		&:not(.has-text-color) {
+			& > .wp-block-navigation-item__content{
+				color: var(--wp--preset--color--foreground);
+
+				&:hover, &:focus {
+					color: var(--wp--custom--color--interactive);
+				}
+			}
+		}
+
+		& > .wp-block-navigation-item__content {
+			padding-block: var(--wp--preset--spacing--05);
+			text-decoration: none;
+
+			.wp-block-navigation-item__label {
+				border-left-color: transparent;
+				border-left-width: 3px !important;
+				border-left-style: solid !important;
+				padding-inline-start: var(--wp--custom--navigation--item--padding-inline);
+			}
+
+			&:hover, &:focus {
+				background-color: rgba(0,0,0,.05);
+				text-decoration: none;
+			}
+		}
+
+		&.current-menu-item, &.current-menu-ancestor, &:has(> .current-menu-ancestor) {
+			& > .wp-block-navigation-item__content{
+
+				.wp-block-navigation-item__label {
+					border-left-color: var(--wp--custom--navigation--current--border--color);
+				}
+			}
+
+			&:not(.has-text-color) {
+				& > .wp-block-navigation-item__content{
+					color: var(--wp--custom--navigation--current--border--color);
+				}
+			}					
+		}
+
+		&:hover, &:focus {
+			color: var(--wp--custom--color--interactive);	
+		}
+
+		// li item which has a submenu
+		&.wp-block-navigation-submenu {
+			color: var(--wp--preset--color--foreground);	
+		}
+		
+		// nested menu items
+		.wp-block-navigation-item {
+			border: 0;
+			
+			& > .wp-block-navigation-item__content{
+				
+				
+				.wp-block-navigation-item__label {
+					border-left: 0 !important;
+					padding-inline-start: calc(1.5 * var(--wp--custom--navigation--item--padding-inline)) !important;
+				}
+			}	
+
+			.wp-block-navigation-item {
+				& > .wp-block-navigation-item__content{
+					.wp-block-navigation-item__label {
+						padding-inline-start: calc(2 * var(--wp--custom--navigation--item--padding-inline)) !important;
+					}
+				}	
+			}
+
+		}
+	}
+}
+
+/** Custom Megamenu Style **/
+.wp-block-navigation {
+	
+	&.is-style-alicorn-megamenu {
+		
+		@include break-small() {
+			// allows megamenu to be full width
+			position: static;
+			.wp-block-navigation__responsive-container, .wp-block-navigation__responsive-dialog {
+				position: static;
+			}
+			.wp-block-navigation__container {
+				position: static;
+				// first level menu items
+				& > .wp-block-navigation-item.has-child {
+					position: static;
+					& > .wp-block-navigation__submenu-container {
+						// full width menu with columns
+						position: absolute;
+						left: 0;
+						right: 0;		
+						display: flex;
+						flex-direction: row;
+
+						// first children of the submenu
+						& > .wp-block-navigation-item {
+							padding-block: var(--wp--preset--spacing--10);
+							padding-inline: var(--wp--custom--navigation--item--padding-inline);
+							flex-basis: 200px;
+							flex-grow: 1;
+
+							&:hover, &:focus {
+								& > .wp-block-navigation-item__label {
+									text-decoration: underline !important;
+								}
+							}
+
+							&.open-on-click {
+								// this menu item doesn't do anything in this configuration, so let's convert it to a heading
+								& > .wp-block-navigation-submenu__toggle {
+									
+									border-bottom-width: 1px;
+									border-bottom-style: solid;
+									border-bottom-color: currentColor;
+									color: inherit;
+									margin-block-end: var(--wp--preset--spacing--05);
+									pointer-events: none;
+
+									span {
+
+									}
+								}
+							}
+
+							& > .wp-block-navigation__submenu-icon {
+								display: none;
+							}
+
+							// imediate submenus are showing
+							& > .wp-block-navigation__submenu-container {
+								display: block;
+								height: auto;
+								opacity: 1;
+								visibility: visible;
+								top: 0;
+
+								& > .wp-block-navigation-item {
+									background-color: transparent !important;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

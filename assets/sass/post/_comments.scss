@@ -31,7 +31,7 @@
 		input:not([type=submit]):not([type=checkbox]),
 		textarea {
 			font-size: var(--wp--preset--font-size--normal);
-			background: var(--wp--custom--color--background);
+			background: var(--wp--preset--color--background);
 			border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 			width: 100%;
 		}
@@ -89,6 +89,7 @@
 	}
 
 	.comment-reply-title {
+		margin-bottom: var(--wp--custom--gap--baseline);
 		small {
 			float: right;
 			font-size: 14px;
@@ -123,18 +124,17 @@
 	}
 }
 
-.wp-block-post-comments {
-	.comment-author {
-		b {
-			font-weight: 700;
-		}
-	}
+.wp-block-comments {
 
-	.comment-edit-link {
-		margin-left: 10px;
-		@extend button;
-		padding: 5px 10px !important;
-		font-size: 11px;
+	.wp-block-comment-edit-link a {
+		margin-inline-start: 1em;
+		@include button-main-styles;
+		padding: .3em .8em !important;
+		font-size: var(--wp--preset--font-size--x-small);
 		text-transform: uppercase;
 	}
+}
+
+.wp-block-comment-template {
+	padding-bottom: .5em;
 }

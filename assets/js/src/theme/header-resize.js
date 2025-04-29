@@ -25,18 +25,15 @@ License: GPLv2
 	var $lastScrollTop = $(window).scrollTop(); // reset variable any time it reloads
 	var $siteHeader = $('.header-sticky'); // your header element
 	var changeDirection = -1; // base comparitive variable
-	var shrinkClass = 'header-sticky-small'; // your small header class
+	var shrinkClass = 'header-sticky-scroll'; // your small header class
 	var bodyClass = 'sticky-header-enabled'; // your small body class
 	var $headerHeight = $siteHeader.height();
 
 	$(window).load(function(){
 
-		console.log($headerHeight);
-
 		// only if this class exists
 		if($siteHeader.length) {
 			$('html').addClass(bodyClass);
-
 
 			$(window).on('scroll', (function(event) {
 				var $scrollPosition = $(this).scrollTop();
@@ -53,11 +50,10 @@ License: GPLv2
 				    }
 
 				} else { // this is mobile breakpoint or smaller
-					if ($scrollPosition <= 46 ) {
 
-					}
+					if ($scrollPosition > 100 && $scrollPosition > $lastScrollTop) { // once you get far enough down, add the shrink class
 
-					if ($scrollPosition > 100 && $scrollPosition > $lastScrollTop) { // once you get far enough down, hide the header
+						console.log('add');
 
 				    	changeDirection = -1; // reset changeDirection
 				        $siteHeader.addClass(shrinkClass);
@@ -65,13 +61,16 @@ License: GPLv2
 				    } else { // bring it back up again if we scroll up at all
 
 				    	if ( -1 == changeDirection) {
+							console.log('reset');
 				    		changeDirection = $scrollPosition; // only set changeDirection once
 				    	}
 
 				    	if ( $scrollPosition < (changeDirection - 100) ) { // only add after you've scrolled up a bit
 
+							console.log('remove');
+
 					    	$siteHeader.removeClass(shrinkClass);
-					    	changeDirection = -1; // reset changeDirection
+					    	// changeDirection = -1; // reset changeDirection
 					    }
 
 				    }

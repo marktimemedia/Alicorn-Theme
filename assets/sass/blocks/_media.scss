@@ -1,9 +1,4 @@
-/** Cover **/
-:where(.wp-block-cover-image:not(.has-text-color)), :where(.wp-block-cover:not(.has-text-color)) {
-	color: var(--wp--custom--color--background);
-}
-
-/** Gallery **/
+// Gallery
 .wp-block-gallery {
 	.blocks-gallery-image,
 	.blocks-gallery-item {
@@ -13,7 +8,7 @@
 	}
 }
 
-/** Image **/
+// Image
 .wp-block-image {
 	/*
 	From what I can tell the below are styles regularly used by themes
@@ -26,7 +21,7 @@
 	text-align: center;
 }
 
-/** Video **/
+// Video
 .wp-block-video {
 	figcaption { // https://github.com/WordPress/gutenberg/issues/34642
 		margin: var(--wp--custom--video--caption--margin);

@@ -1,0 +1,30 @@
+<!-- wp:group {"lock":{"move":true,"remove":true},"metadata":{"name":"Wrapper"},"className":"wrapper"} -->
+<div class="wp-block-group wrapper">
+  <!-- wp:template-part {"slug":"header-quicklinks","theme":"alicorn","tagName":"header","className":"header-sticky"} /-->
+  <!-- wp:group {"className":"content-body","lock":{"move":true,"remove":true},"metadata":{"name":"Body"}} -->
+  <div class="wp-block-group content-body">
+    <!-- wp:group {"metadata":{"name":"Content Header"},"className":"content-header","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"backgroundColor":"subtle","layout":{"inherit":true,"type":"constrained"}} -->
+    <div class="wp-block-group content-header has-subtle-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:group {"metadata":{"name":"Author Name"},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+      <div class="wp-block-group">
+        <!-- wp:avatar {"size":110,"style":{"border":{"radius":"50%"}}} /-->
+        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|05"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+        <div class="wp-block-group">
+          <!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+          <!-- wp:post-author-biography /-->
+        </div>
+        <!-- /wp:group -->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+      
+    <!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"className":"content-main","tagName":"main","layout":{"type":"constrained"},"lock":{"move":true,"remove":true},"metadata":{"name":"Content Main"}} -->
+		<main class="wp-block-group content-main" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)">
+      <!-- wp:pattern {"slug":"alicorn/query-cards-archive"} /-->
+    </main>
+    <!-- /wp:group -->
+  </div>
+  <!-- /wp:group -->
+  <!-- wp:template-part {"slug":"footer-columns","theme":"alicorn","tagName":"footer","className":"site-footer-container"} /-->
+</div>
+<!-- /wp:group -->

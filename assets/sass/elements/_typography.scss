@@ -1,15 +1,13 @@
 // Default link styles
-a:where(:not(.wp-block-button__link, .button)) {
-	color: var(--wp--custom--color--interactive);
+a:where(:not(.wp-block-button__link, .button, .wp-element-button)) {
+    color: var(--wp--custom--color--interactive-text);
+	text-underline-offset: .1em;
+    text-decoration-thickness: 0.05em !important;
 
 	&:hover,
-	&:focus {
-		color: var(--wp--custom--color--interactive-hover)
-	}
-
 	&:active,
 	&:focus {
-		outline: 1px dotted currentcolor;
+		color: var(--wp--custom--color--interactive-text-hover)
 	}
 }
 
@@ -18,8 +16,20 @@ a {
 	transition: var(--wp--custom--animation--transition-type) var(--wp--custom--animation--transition-duration);
 	
 	&:hover,
+	&:active,
 	&:focus {
 		transition: var(--wp--custom--animation--transition-type) var(--wp--custom--animation--transition-duration);
+	}
+}
+
+// Select the focus states of all non-wpadmin and screen reader links
+a:where(:not(.ab-item):not(.screen-reader-shortcut)) {
+
+	// match focus outline
+	&:active,
+	&:focus {
+		outline: .25rem solid var(--wp--custom--color--focus);
+		outline-offset: 0;
 	}
 }
 
@@ -34,19 +44,15 @@ a {
 	}
 }
 
-// Select the focus states of all non-wpadmin and screen reader links
-a:not(.ab-item):not(.screen-reader-shortcut) {
-	&:active,
-	&:focus {
-		outline: 1px dotted currentColor;
-		text-decoration: none;
+// Needed until https://github.com/WordPress/gutenberg/issues/36122 is fixed
+p {
+
+	&.has-drop-cap:not(:focus)::first-letter {
+		font-size: var(--wp--custom--paragraph--dropcap--typography--font-size);
+		font-weight: var(--wp--custom--paragraph--dropcap--typography--font-weight);
+		margin: var(--wp--custom--paragraph--dropcap--margin);
 	}
 }
-
-.has-medium-font-size, .has-small-font-size, .has-x-small-font-size {
-	font-weight: var(--wp--custom--body--typography--font-weight);
-}
-
 
 // default margins and paddings for typographic elements
 ul, ol {
@@ -65,7 +71,46 @@ dl {
 	}
 }
 
+pre {
+	overflow: auto;
+    line-height: var(--wp--custom--code--typography--line-height);
+}
+
 code {
 	display: inline-block;
 	line-height: inherit;
+}
+
+code, pre {
+    font-family: var(--wp--custom--code--typography--font-family);
+    font-weight: var(--wp--custom--code--typography--font-weight); 
+}
+
+hr {
+	border-color: var(--wp--custom--color--ui-border);
+}
+
+/** Default Line Heights **/
+ // If you change font-size names & values in theme.json, be sure to update here
+
+ // larger than paragraph, smaller than ~24px should be treated like pullquote/lead typography
+ .has-emphasis-font-size, .has-intermediate-font-size {
+	line-height: var(--theme--intro--line-height);
+ }
+
+ // larger than ~24px should be treated like heading typography
+ .has-medium-font-size, .has-large-font-size, .has-x-large-font-size, .has-xx-large-font-size, .has-display-font-size {
+	line-height: var(--theme--heading--line-height);
+ }
+
+ // if text-decoration:none is applied in editor, links should observe this but have underlines on hover/focus
+ [style*="text-decoration:none"], .has-text-decoration-none {
+	& > a {
+		text-decoration-line:none !important;
+
+		&:hover, &:focus {
+			text-decoration-style: solid !important;
+			text-decoration-line: var(--wp--custom--paragraph--link--hover--typography--text-decoration) !important;
+		}
+	}
 }

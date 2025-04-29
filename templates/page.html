@@ -1,21 +1,17 @@
-<!-- wp:group {"className":"wrapper","lock":{"move":true,"remove":true}} -->
+<!-- wp:group {"lock":{"move":true,"remove":true},"metadata":{"name":"Wrapper"},"className":"wrapper"} -->
 <div class="wp-block-group wrapper">
   <!-- wp:template-part {"slug":"header-quicklinks","theme":"alicorn","tagName":"header","className":"header-sticky"} /-->
-  <!-- wp:group {"tagName":"section","className":"content-body","lock":{"move":true,"remove":true}} -->
-  <section class="wp-block-group content-body">
-    <!-- wp:group {"className":"content-header","layout":{"inherit":true},"lock":{"move":true,"remove":true}} -->
-    <div class="wp-block-group content-header">
-      <!-- wp:post-title {"level":1,"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|30"}}}} /-->
-    </div>
-    <!-- /wp:group -->
-    <!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"className":"content-main","tagName":"main","layout":{"type":"constrained"},"lock":{"move":true,"remove":true}} -->
-		<main class="wp-block-group content-main" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)">
-      <!-- wp:post-featured-image {"align":"full"} /-->
-      <!-- wp:post-content {"layout":{"inherit":true}} /-->
+
+  <!-- wp:group {"lock":{"move":true,"remove":true},"metadata":{"name":"Body"},"className":"content-body"} -->
+  <div class="wp-block-group content-body">
+    <!-- wp:group {"tagName":"main","lock":{"move":true,"remove":true},"metadata":{"name":"Content Main"},"className":"content-main","style":{"spacing":{"margin":{"top":0,"bottom":0}}},"layout":{"type":"constrained"}} -->
+    <main class="wp-block-group content-main">
+      <!-- wp:post-content {"align":"full","layout":{"type":"constrained"}} /-->
     </main>
     <!-- /wp:group -->
-  </section>
+  </div>
   <!-- /wp:group -->
+  
   <!-- wp:template-part {"slug":"footer-columns","theme":"alicorn","tagName":"footer","className":"site-footer-container"} /-->
 </div>
 <!-- /wp:group -->

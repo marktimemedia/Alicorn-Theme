@@ -38,7 +38,7 @@
 
 	> * {
 		&:not(:first-child):before {
-			color: var(--wp--custom--color--background);
+			color: var(--wp--preset--color--background);
 			content: $content;
 			margin-left: var(--wp--custom--gap--baseline);
 			margin-right: var(--wp--custom--gap--baseline);
@@ -61,7 +61,7 @@
 	border-color: var(--wp--custom--button--border--color);
 	background-clip: border-box;
 	svg {
-		fill: var(--wp--custom--button--color--text);
+		fill: currentColor;
 	}
 }
 
@@ -107,21 +107,41 @@
 			--wp--custom--button--border--color: var(--wp--custom--button--active--border--color);
 		}
 	}
+
+	&:where(:not(.has-text-color)) {
+		&:hover,
+		&:focus,
+		&.has-focus {
+			//change the color variables to the hover equivalent
+			--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+			color: var(--wp--custom--button--color--text);
+		}
+		&:active {
+			--wp--custom--button--color--text: var(--wp--custom--button--active--color--text);
+			color: var(--wp--custom--button--color--text);
+		}
+	}
 	// there are no hover states for custom color buttons right now, let's give it a filter to indicate change
 	&.has-background, &.has-text-color {
 		&:hover {
-			filter: brightness(0.8);
+			filter: saturate(0.5);
 		}
 		&:focus,
 		&.has-focus {
-			filter: brightness(1);
+			filter: saturate(1);
 		}
 		&:active {
-			filter: brightness(0.7);
+			filter: saturate(0.3);
 		}
 	}
 
-	&:hover, &:focus {
+	&:hover, &:focus, &:active {
+		cursor: pointer;
 		text-decoration: none;
+	}
+
+	&:focus {
+		outline: .25rem solid var(--wp--custom--color--focus);
+		outline-offset: 0;
 	}
 }

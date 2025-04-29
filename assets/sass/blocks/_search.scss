@@ -43,54 +43,13 @@
 	}
 }
 
-/* Toggle Search Styles */
-.search-toggle-form {
-	max-width: 0;
-  overflow: hidden; // to account for the toggle
-	transition: all .8s;
-
-	&.search-expanded, &.block-editor-block-list__block {
-		max-width: 400px;
+// fix for core animation not coming from button
+.wp-block-search__inside-wrapper {
+	@media only screen and (min-width: $break-mobile) {
+		justify-content: flex-end;
 	}
-
 }
-.search-toggle-container.is-layout-flex {
-	gap: 1rem;
-}
-.search-toggle-trigger {
-	--wp--custom--button--typography--font-size: calc( 0.8 * var(--wp--preset--font-size--small));
-	align-self: center;
-	display: inherit !important;
-	.wp-block-button__link {
-		width: 32px;
-		height: 32px;
-		overflow: hidden;
-		padding: 6px !important;
-		line-height: 2em !important;
-	}
-	&.is-style-outline {
-		.wp-block-button__link {
-			padding: 3px !important;
-		}
-	}
-	.wp-block-button__link:before {
-		align-self: center;
-		content: "";
-		display: block;
-		height: 22px;
-		width: 22px;
-		mask-size: contain;
-		-webkit-mask-size: contain;
-		mask-repeat: no-repeat;
-		-webkit-mask-repeat: no-repeat;
-		background-color: currentColor;
-		-webkit-mask-image: url('assets/svg/search.svg');
-   		mask-image: url('assets/svg/search.svg');
-	}
-	&.search-open {
-		.wp-block-button__link:before {
-			-webkit-mask-image: url('assets/svg/close.svg');
-   			mask-image: url('assets/svg/close.svg');
-		}
-	}
+// core value breaks the animation
+.wp-block-search.wp-block-search__button-only .wp-block-search__button[aria-expanded=true] {
+	max-width: 100%;
 }

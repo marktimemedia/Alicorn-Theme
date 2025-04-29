@@ -21,7 +21,7 @@
     "options": {
       "autoRename": false,
       "autoRenameStrict": false,
-      "blacklist": {},
+      "foregroundlist": {},
       "clean": true,
       "greedy": false,
       "processUrls": false,
@@ -36,9 +36,8 @@
   "scripts": {
     "build": "npm-run-all --sequential build:**",
     "build:scripts:theme": "wp-scripts build --webpack-src-dir=assets/js/src --output-path=assets/js/build",
-    "build:styles:theme-stylesheet": "postcss assets/sass/style.scss --output style.css --env production",
-    "build:styles:theme-stylesheet-rtl": "rtlcss style.css style-rtl.css",
-    "build:styles:theme-editor": "postcss assets/sass/style-editor.scss --output style-editor.css --env production",
+    "build:styles:theme-stylesheet": "postcss assets/sass/styles.scss --output assets/css/styles.css --env production",
+    "build:styles:theme-editor": "postcss assets/sass/editor-styles.scss --output assets/css/editor-styles.css --env production",
     "format:scripts": "npm-run-all --sequential format:scripts:**",
     "format:scripts:theme": "wp-scripts format  --no-error-on-unmatched-pattern",
     "format:styles": "npm-run-all --sequential format:styles:**",
@@ -54,7 +53,7 @@
     "check-licenses": "wp-scripts check-licenses",
     "start": "npm-run-all --parallel start:**",
     "start:scripts:theme": "wp-scripts start --webpack-src-dir=assets/js/src --output-path=assets/js/build",
-    "start:styles:theme-stylesheet": "postcss assets/sass/style.scss --output style.css --env development --watch --verbose",
-    "start:styles:theme-editor": "postcss assets/sass/style-editor.scss --output style-editor.css --env development --watch --verbose"
+    "start:styles:theme-stylesheet": "postcss assets/sass/styles.scss --output assets/css/styles.css --env development --watch --verbose",
+    "start:styles:theme-editor": "postcss assets/sass/editor-styles.scss --output assets/css/editor-styles.css --env development --watch --verbose"
   }
 }
