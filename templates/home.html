@@ -1,25 +1,22 @@
-<?php
-/**
- * Title: Page Template: Standard
- * Slug: alicorn/template-standard-page
- * Template Types: front-page, page, single, singular, privacy-policy
- * Inserter: no
- */
-?>
 <!-- wp:group {"lock":{"move":true,"remove":true},"metadata":{"name":"Wrapper"},"className":"wrapper"} -->
 <div class="wp-block-group wrapper">
 	<!-- wp:template-part {"slug":"header-quicklinks","tagName":"header","className":"header-sticky"} /-->
-
-	<!-- wp:group {"lock":{"move":true,"remove":true},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"className":"content-body","metadata":{"name":"Body"}} -->
-	<div class="wp-block-group content-body" style="margin-top:0;margin-bottom:0">
+	<!-- wp:group {"lock":{"move":true,"remove":true},"className":"content-body","metadata":{"name":"Body"}} -->
+	<div class="wp-block-group content-body">
+		<!-- wp:group {"lock":{"move":true,"remove":true},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"className":"content-header","layout":{"inherit":true,"type":"constrained"},"metadata":{"name":"Content Header"}} -->
+		<div class="wp-block-group content-header" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)">
+			<!-- wp:heading {"level":1} -->
+			<h1>All Posts</h1>
+			<!-- /wp:heading -->
+		</div>
+		<!-- /wp:group -->
 		<!-- wp:group {"tagName":"main","lock":{"move":true,"remove":true},"style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"className":"content-main","layout":{"type":"default"},"metadata":{"name":"Content Main"}} -->
 		<main class="wp-block-group content-main" style="margin-top:0;margin-bottom:0">
-		<!-- wp:post-content {"align":"full","layout":{"type":"constrained"}} /-->
+			<!-- wp:pattern {"slug":"alicorn/query-cards-archive"} /-->
 		</main>
 		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
-
 	<!-- wp:template-part {"slug":"footer-columns","tagName":"footer","className":"site-footer-container"} /-->
 </div>
 <!-- /wp:group -->

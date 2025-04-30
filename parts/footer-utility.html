@@ -1,15 +1,13 @@
-<!-- wp:group {"className":"alignfull site-footer"} -->
-<div class="wp-block-group alignfull site-footer"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"20px","bottom":"20px"}}},"backgroundColor":"foreground","textColor":"background","className":"site-footer-utility"} -->
-	<div class="wp-block-group alignfull site-footer-utility has-background-color has-foreground-background-color has-text-color has-background" style="padding-top:20px;padding-bottom:20px"><!-- wp:columns {"verticalAlignment":"top"} -->
-	<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"66.66%"} -->
-	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:66.66%"><!-- wp:navigation {"ref":1860,"overlayMenu":"never","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} /--></div>
-	<!-- /wp:column -->
+<!-- wp:group {"metadata":{"name":"Site Footer"},"className":"alignfull site-footer","layout":{"inherit":true,"type":"constrained"}} -->
+<div class="wp-block-group alignfull site-footer">
+	<!-- wp:group {"metadata":{"name":"Site Footer Legal"},"align":"full","className":"site-footer__utility","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}},"backgroundColor":"black","textColor":"white"} -->
+	<div class="wp-block-group alignfull site-footer__utility has-white-color has-black-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+	<div class="wp-block-group"><!-- wp:navigation {"overlayMenu":"never","style":{"spacing":{"blockGap":"0"}}} /-->
 	
-	<!-- wp:column {"verticalAlignment":"top","width":"33.33%"} -->
-	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:33.33%"><!-- wp:paragraph {"align":"right"} -->
-	<p class="has-text-align-right"><p class="has-text-align-right" style="font-size:var(--wp--preset--font-size--tiny)">© Copyright Notice Here</p></p>
-	<!-- /wp:paragraph --></div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns --></div>
+	<!-- wp:blockspring/copyright-year -->
+	<div class="wp-block-blockspring-copyright-year has-text-align-none"><time>© 2025</time><p>My Site Name. All Rights Reserved.</p></div>
+	<!-- /wp:blockspring/copyright-year --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->

@@ -545,13 +545,6 @@
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/domine/domine-400-700.woff2" ]
-						},
-						{
-							"fontFamily": "Domine",
-							"fontWeight": "400 700",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/domine/domine-400-700-italic.woff2" ]
 						}
 					]
 				},
@@ -638,7 +631,7 @@
 							"src": [ "file:./assets/fonts/fira-sans/fira-sans-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Fira Sans",
 							"fontWeight": "500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -666,7 +659,7 @@
 							"src": [ "file:./assets/fonts/fira-sans/fira-sans-SemiBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Fira Sans",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -725,13 +718,6 @@
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/inter/inter-100-900.woff2" ]
-						},
-						{
-							"fontFamily": "Inter",
-							"fontWeight": "100 900",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/inter/inter-100-900-italic.woff2" ]
 						}
 					]
 				},
@@ -860,14 +846,14 @@
 							"src": [ "file:./assets/fonts/merriweather/merriweather-Bold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Merriweather",
 							"fontWeight": "900",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/merriweather/merriweather-Black.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Merriweather",
 							"fontWeight": "900",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
@@ -893,6 +879,27 @@
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf" ]
+						}
+					]
+				},
+				{
+					"fontFamily": "Nunito, sans-serif",
+					"slug": "nunito",
+					"name": "Nunito",
+					"fontFace": [
+						{
+							"fontFamily": "Nunito",
+							"fontWeight": "200 900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/nunito/Nunito-VariableFont_wght.woff2" ]
+						},
+						{
+							"fontFamily": "Nunito",
+							"fontWeight": "200 900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/nunito/Nunito-Italic-VariableFont_wght.woff2" ]
 						}
 					]
 				},
@@ -1175,7 +1182,7 @@
 							"src": [ "file:./assets/fonts/roboto/roboto-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Roboto",
 							"fontWeight": "500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -1203,7 +1210,7 @@
 							"src": [ "file:./assets/fonts/roboto/roboto-SemiBold-italic.woff2" ]
 						},
 						{
-							"fontFamily": "IBM Plex Mono",
+							"fontFamily": "Roboto",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -1257,13 +1264,6 @@
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/roboto-slab/roboto-slab-100-900.woff2" ]
-						},
-						{
-							"fontFamily": "Roboto Slab",
-							"fontWeight": "100 900",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/roboto-slab/roboto-slab-100-900-italic.woff2" ]
 						}
 					]
 				},
@@ -1716,6 +1716,7 @@
 				"tableBorder": "var(--wp--preset--color--base-minus-2)",
 				"uiBorder": "var(--wp--preset--color--base)",
 				"bannerBackground": "var(--wp--preset--color--translucent-bold)",
+				"buttonText": "var(--wp--preset--color--white)",
 				"bannerText": "var(--wp--preset--color--white)",
 				"warn": "#EB7100",
 				"error": "#D70404",
@@ -1787,7 +1788,7 @@
 				"active": {
 					"color": {
 						"background": "var(--wp--custom--color--interactive-active)",
-						"text": "var(--wp--preset--color--background)"
+						"text": "var(--wp--custom--color--button-text)"
 					},
 					"border": {
 						"color": "var(--wp--custom--color--button-border)"
@@ -1796,7 +1797,7 @@
 				"focus": {
 					"color": {
 						"background": "var(--wp--custom--color--interactive-hover)",
-						"text": "var(--wp--preset--color--background)"
+						"text": "var(--wp--custom--color--button-text)"
 					},
 					"outline": {
 						"color": "var(--wp--custom--color--focus)",
@@ -1811,7 +1812,7 @@
 				"hover": {
 					"color": {
 						"background": "var(--wp--custom--color--interactive-hover)",
-						"text": "var(--wp--preset--color--background)"
+						"text": "var(--wp--custom--color--button-text)"
 					},
 					"border": {
 						"color": "var(--wp--custom--color--button-border)"
@@ -1825,7 +1826,7 @@
 				},
 				"color": {
 					"background": "var(--wp--custom--color--interactive)",
-					"text": "var(--wp--preset--color--background)"
+					"text": "var(--wp--custom--color--button-text)"
 				},
 				"spacing": {
 					"padding": {

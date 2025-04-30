@@ -75,9 +75,9 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 .wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
 .is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
 .wp-site-blocks .alignfull:where(:not(.wp-block-group)) .alignfull,
-.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
-	padding-inline-start: 0;
-	padding-inline-end: 0;
+.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group):not(.wp-block-cover) .wp-block[data-align="full"] {
+	margin-inline-start: auto;
+	margin-inline-end: auto;
 	width: inherit;
 }
 
